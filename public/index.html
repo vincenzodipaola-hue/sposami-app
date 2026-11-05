@@ -3,212 +3,251 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sposami.ai — anteprima interna WR</title>
+<title>Sposami.ai — Gioia, il vostro planner AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Quanto costa un fotografo di matrimonio in Toscana?","inLanguage":"it","dateModified":"2026-11-02","author":{"@type":"Organization","name":"Sposami.ai"}}
 </script>
-<style>
-:root{
-  --bg:#F3F4EF; --surface:#FFFFFF; --surface-2:#E9EBE2; --ink:#1E2622; --ink-soft:#56605A;
-  --line:#D5D9CC; --olive:#55663A; --olive-ink:#FFFFFF; --olive-soft:#E3E8D6;
-  --paid:#9A5B13; --paid-bg:#FBEBD3; --focus:#2F6FDB;
-  --serif:"Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --sans:"Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+<style>:root{
+  --bg:#FBF8FF; --surface:#FFFFFF; --surface-2:#F3EEFF; --ink:#2D1E3E; --ink-soft:#6B5E7B; --line:#E7DFF3;
+  --primary:#6C4BD8; --primary-ink:#FFFFFF; --primary-soft:#ECE6FF;
+  --sun:#FFB238; --sun-soft:#FFF1D6; --mint:#3FBF8F; --mint-soft:#DDF6EC; --rose:#FF6F91; --rose-soft:#FFE3EA; --sky:#4BA3F2; --sky-soft:#E0F0FF;
+  --paid:#B4560C; --paid-bg:#FFF0DE; --focus:#2F6FDB;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --sans:"Nunito Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --r-lg:28px; --r-md:18px; --r-sm:12px;
   color-scheme: light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#141815; --surface:#1C211D; --surface-2:#252B26; --ink:#E8EBE4; --ink-soft:#A6AEA6;
-    --line:#333B34; --olive:#A9BC84; --olive-ink:#141815; --olive-soft:#2B3324;
-    --paid:#F0B866; --paid-bg:#3A2B15; --focus:#7FA8F5; color-scheme: dark;
+    --bg:#17121F; --surface:#211A2C; --surface-2:#2B2238; --ink:#F3EEFA; --ink-soft:#B9AECA; --line:#3A3049;
+    --primary:#A88BFF; --primary-ink:#17121F; --primary-soft:#2F2546;
+    --sun-soft:#3A2D16; --mint-soft:#183329; --rose-soft:#3A1E27; --sky-soft:#162B3D;
+    --paid:#FFB45E; --paid-bg:#3A2914; --focus:#8DB4FF; color-scheme: dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#141815; --surface:#1C211D; --surface-2:#252B26; --ink:#E8EBE4; --ink-soft:#A6AEA6;
-  --line:#333B34; --olive:#A9BC84; --olive-ink:#141815; --olive-soft:#2B3324;
-  --paid:#F0B866; --paid-bg:#3A2B15; --focus:#7FA8F5; color-scheme: dark;
+  --bg:#17121F; --surface:#211A2C; --surface-2:#2B2238; --ink:#F3EEFA; --ink-soft:#B9AECA; --line:#3A3049;
+  --primary:#A88BFF; --primary-ink:#17121F; --primary-soft:#2F2546;
+  --sun-soft:#3A2D16; --mint-soft:#183329; --rose-soft:#3A1E27; --sky-soft:#162B3D;
+  --paid:#FFB45E; --paid-bg:#3A2914; --focus:#8DB4FF; color-scheme: dark;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0; min-height:100%; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
 body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--surface)}
-img{max-width:100%}
-a{color:var(--olive)}
-:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+img,svg{max-width:100%}
+a{color:var(--primary)}
+:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
 button{font:inherit; cursor:pointer}
+h1,h2,h3,h4{font-family:var(--display); letter-spacing:-.01em; line-height:1.1}
 
-/* barra interna */
-.devbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--surface); border-bottom:1px solid var(--line);
+/* barra in alto */
+.devbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
   display:flex; gap:12px; align-items:center; justify-content:space-between; padding:10px 20px; flex-wrap:wrap}
 .devbar .note{font-size:13px; color:var(--ink-soft)}
 .tabs{display:flex; gap:4px; background:var(--surface-2); padding:4px; border-radius:999px}
-.tabs a{text-decoration:none; color:var(--ink-soft); font-size:14px; font-weight:600; padding:6px 14px; border-radius:999px}
-.tabs a[aria-current="page"]{background:var(--surface); color:var(--ink); box-shadow:0 1px 0 var(--line)}
+.tabs a{text-decoration:none; color:var(--ink-soft); font-size:14px; font-weight:700; padding:7px 16px; border-radius:999px}
+.tabs a[aria-current="page"]{background:var(--primary); color:var(--primary-ink)}
 
 .view{display:none}
 .view.on{display:block}
-.wrap{max-width:1160px; margin:0 auto; padding:0 20px}
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
 
-/* ===== SPOSI ===== */
-.brand{display:flex; align-items:baseline; gap:10px; padding:28px 0 6px}
-.brand b{font-family:var(--serif); font-weight:400; font-size:30px; letter-spacing:-.01em}
-.brand span{color:var(--ink-soft); font-size:14px}
-.hero{padding:10px 0 22px; max-width:760px}
-.hero h1{font-family:var(--serif); font-weight:400; font-size:clamp(38px,6vw,64px); line-height:1.02; margin:0 0 14px; letter-spacing:-.015em}
-.hero p{margin:0; color:var(--ink-soft); max-width:60ch}
+/* ===== HERO ===== */
+.hero{display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; padding:30px 0 26px}
+@media (max-width:760px){ .hero{grid-template-columns:1fr; gap:14px} }
+.hero .mascot{width:150px; height:150px}
+@media (max-width:760px){ .hero .mascot{width:96px; height:96px} }
+.brand{font-size:14px; font-weight:800; color:var(--primary); margin:0 0 6px}
+.hero h1{font-size:clamp(34px,5.4vw,58px); margin:0 0 12px; font-weight:800}
+.hero p{margin:0; color:var(--ink-soft); max-width:60ch; font-size:17px}
 
-.app{display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:20px; padding-bottom:40px; align-items:start}
-@media (max-width:900px){ .app{grid-template-columns:1fr} .brief{order:-1} }
+.stripe{display:flex; gap:10px; overflow-x:auto; padding:2px 0 22px; scrollbar-width:none}
+.stripe::-webkit-scrollbar{display:none}
+.tile{flex:0 0 auto; display:flex; align-items:center; gap:10px; border:0; border-radius:999px; padding:6px 16px 6px 6px; font-weight:800; font-size:14px; color:var(--ink); text-align:left}
+.tile svg{width:38px; height:38px; flex:none}
+.t-sun{background:var(--sun-soft)} .t-mint{background:var(--mint-soft)} .t-rose{background:var(--rose-soft)} .t-sky{background:var(--sky-soft)} .t-lilac{background:var(--primary-soft)}
 
-.chat{background:var(--surface); border:1px solid var(--line); border-radius:22px; display:flex; flex-direction:column; min-height:520px}
-.log{flex:1; padding:22px; display:flex; flex-direction:column; gap:16px; overflow:auto; max-height:68vh}
-.msg{max-width:88%; white-space:normal}
-.msg.u{align-self:flex-end; background:var(--olive); color:var(--olive-ink); padding:10px 14px; border-radius:18px 18px 4px 18px}
-.msg.a{align-self:flex-start}
-.msg.a .txt p{margin:0 0 10px}
-.msg.a .txt ul{margin:0 0 10px; padding-left:20px}
-.msg.a .txt .ref{font-weight:600; border-bottom:1px solid var(--olive)}
-.msg .status{color:var(--ink-soft); font-size:14px; font-style:italic}
-.msg .err{color:var(--paid); font-size:14px}
-.starters{display:flex; flex-wrap:wrap; gap:8px; padding:0 22px 14px}
-.starters button{background:var(--surface-2); border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:7px 12px; font-size:14px; text-align:left}
-.composer{display:flex; gap:8px; padding:14px; border-top:1px solid var(--line)}
-.composer textarea{flex:1; resize:none; font:inherit; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:10px 12px; min-height:46px; max-height:140px}
-.btn{background:var(--olive); color:var(--olive-ink); border:0; border-radius:12px; padding:10px 16px; font-weight:600}
-.btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--line)}
-.btn[disabled]{opacity:.5; cursor:default}
-
-.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; margin-top:8px}
-.card{border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--bg); display:flex; flex-direction:column; gap:6px}
-.card.paid{border-color:var(--paid); background:var(--paid-bg)}
-.card .cat{font-size:13px; color:var(--ink-soft)}
-.card h3{margin:0; font-family:var(--serif); font-weight:400; font-size:22px; line-height:1.15}
-.card .meta{font-size:14px; color:var(--ink-soft)}
-.card .price{font-weight:600; font-size:14px}
-.paidtag{align-self:flex-start; font-size:12px; font-weight:700; color:var(--paid); border:1px solid var(--paid); border-radius:6px; padding:1px 6px}
-.card .btn{margin-top:auto; font-size:14px; padding:8px 12px}
-
-.brief{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:20px; position:sticky; top:70px}
-.brief h2{font-family:var(--serif); font-weight:400; font-size:26px; margin:0 0 4px}
-.brief .sub{font-size:13px; color:var(--ink-soft); margin:0 0 14px}
-.brief dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:14px}
-.brief dt{color:var(--ink-soft)}
-.brief dd{margin:0; font-weight:600}
-.brief dd.empty{font-weight:400; color:var(--ink-soft)}
-.brief dd.fresh{animation:flash 1.2s ease}
-@keyframes flash{from{background:var(--olive-soft)} to{background:transparent}}
-@media (prefers-reduced-motion:reduce){.brief dd.fresh{animation:none}}
-.how{margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-soft)}
-.how a{font-weight:600}
-
-/* modale */
-dialog{border:1px solid var(--line); border-radius:20px; background:var(--surface); color:var(--ink); padding:24px; max-width:520px; width:calc(100% - 32px)}
-dialog::backdrop{background:rgba(0,0,0,.35)}
-dialog h3{font-family:var(--serif); font-weight:400; font-size:28px; margin:0 0 8px}
-dialog pre{white-space:pre-wrap; font-family:var(--sans); background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px; font-size:14px}
-.row{display:flex; gap:8px; justify-content:flex-end; flex-wrap:wrap; margin-top:14px}
-
-/* ===== FORNITORI ===== */
-.vhead{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap; padding:28px 0 18px}
-.vhead h1{font-family:var(--serif); font-weight:400; font-size:44px; margin:0; line-height:1.05}
-.vhead p{margin:4px 0 0; color:var(--ink-soft)}
-.vgrid{display:grid; grid-template-columns:1.1fr .9fr; gap:20px; padding-bottom:40px}
-@media (max-width:900px){.vgrid{grid-template-columns:1fr}}
-.panel{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:22px}
-.panel h2{font-family:var(--serif); font-weight:400; font-size:28px; margin:0 0 12px}
-.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:6px}
-.stat b{display:block; font-family:var(--serif); font-weight:400; font-size:40px; line-height:1}
-.stat span{font-size:13px; color:var(--ink-soft)}
-.demo{font-size:12px; color:var(--ink-soft)}
-.lead{border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--bg); margin-top:10px}
-.lead h3{margin:0 0 6px; font-size:16px}
-.lead ul{margin:0; padding-left:18px; font-size:14px}
-.tablewrap{overflow-x:auto}
-table{border-collapse:collapse; width:100%; font-size:14px}
-th,td{text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top}
-th{font-weight:700}
-.bar{height:8px; border-radius:4px; background:var(--olive)}
-.bar.them{background:var(--line)}
-
-/* ===== PORTALE ===== */
-.article{max-width:740px; margin:0 auto; padding:28px 0 60px}
-.crumbs{font-size:13px; color:var(--ink-soft)}
-.article h1{font-family:var(--serif); font-weight:400; font-size:clamp(36px,5.4vw,56px); line-height:1.04; margin:10px 0 10px; letter-spacing:-.01em}
-.updated{font-size:13px; color:var(--ink-soft); margin-bottom:22px}
-.answer{border-left:4px solid var(--olive); background:var(--surface); padding:16px 18px; border-radius:0 16px 16px 0; margin-bottom:26px}
-.answer p{margin:0 0 8px}
-.answer p:last-child{margin:0}
-.article h2{font-family:var(--serif); font-weight:400; font-size:30px; margin:34px 0 10px}
-.article p{max-width:68ch}
-.partner{border:1px solid var(--paid); background:var(--paid-bg); border-radius:18px; padding:16px; margin:26px 0}
-.partner .paidtag{margin-bottom:8px}
-.ask{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:var(--olive); color:var(--olive-ink); border-radius:18px; padding:18px 20px; margin:30px 0}
-.ask p{margin:0; font-weight:600}
-.ask .btn{background:var(--olive-ink); color:var(--olive)}
-.faq dt{font-weight:700; margin-top:14px}
-.faq dd{margin:4px 0 0}
-.sources{font-size:13px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:14px; margin-top:34px}
-
-/* ===== v2 ===== */
-.subtabs{display:flex; gap:6px; flex-wrap:wrap; margin:0 0 16px}
-.subtabs button{background:transparent; border:1px solid var(--line); color:var(--ink-soft); border-radius:999px; padding:7px 14px; font-weight:600; font-size:14px}
+/* ===== SUBTAB ===== */
+.subtabs{display:flex; gap:8px; flex-wrap:wrap; margin:0 0 16px}
+.subtabs button{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:9px 16px; font-weight:800; font-size:14px}
 .subtabs button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
 .pane{display:none}
 .pane.on{display:block}
-.toolbar{display:flex; gap:8px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:14px}
+
+/* ===== APP ===== */
+.app{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:22px; padding-bottom:48px; align-items:start}
+@media (max-width:920px){ .app{grid-template-columns:1fr} .brief{order:-1} }
+.chat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); display:flex; flex-direction:column; min-height:540px; overflow:hidden}
+.chathead{display:flex; align-items:center; gap:12px; padding:14px 18px; background:linear-gradient(90deg,var(--primary-soft),var(--rose-soft)); border-bottom:1px solid var(--line)}
+.chathead svg{width:44px; height:44px; flex:none}
+.chathead b{display:block; font-family:var(--display); font-size:18px}
+.chathead span{font-size:13px; color:var(--ink-soft)}
+.online{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--mint); margin-right:4px}
+.log{flex:1; padding:20px; display:flex; flex-direction:column; gap:16px; overflow:auto; max-height:66vh}
+.msg{max-width:90%}
+.msg.u{align-self:flex-end; background:var(--primary); color:var(--primary-ink); padding:10px 15px; border-radius:20px 20px 6px 20px; font-weight:600}
+.msg.a{align-self:flex-start; display:grid; grid-template-columns:34px 1fr; gap:10px}
+.msg.a::before{content:""; width:34px; height:34px; border-radius:50%; background:var(--gioia-avatar) center/cover; grid-row:1 / span 3}
+.msg.a > *{grid-column:2}
+.msg.a .txt{background:var(--surface-2); padding:12px 15px; border-radius:6px 20px 20px 20px}
+.msg.a .txt p{margin:0 0 10px} .msg.a .txt p:last-child{margin:0}
+.msg.a .txt ul{margin:0 0 10px; padding-left:20px}
+.msg.a .txt .ref{font-weight:800; color:var(--primary)}
+.msg .status{color:var(--ink-soft); font-size:14px; font-style:italic}
+.msg .err{color:var(--paid); font-size:14px; font-weight:700}
+.starters{display:flex; flex-wrap:wrap; gap:8px; padding:0 20px 14px}
+.starters button{background:var(--surface); border:1.5px dashed var(--primary); color:var(--ink); border-radius:16px; padding:8px 12px; font-size:14px; text-align:left; font-weight:600}
+.quick{display:flex; gap:6px; flex-wrap:wrap; padding:10px 14px 0}
+.quick button{background:var(--surface-2); border:0; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700; color:var(--ink)}
+.composer{display:flex; gap:8px; padding:14px; border-top:1px solid var(--line)}
+.composer textarea{flex:1; resize:none; font:inherit; color:var(--ink); background:var(--bg); border:1.5px solid var(--line); border-radius:16px; padding:11px 14px; min-height:48px; max-height:140px}
+.btn{background:var(--primary); color:var(--primary-ink); border:0; border-radius:14px; padding:11px 18px; font-weight:800}
+.btn.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--line)}
+.btn[disabled]{opacity:.5; cursor:default}
+
+/* schede fornitore */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; margin-top:10px}
+.card{border:1px solid var(--line); border-radius:var(--r-md); background:var(--surface); display:flex; flex-direction:column; overflow:hidden}
+.card .pic{height:112px; display:block}
+.card .pic svg{width:100%; height:100%; display:block}
+.card .body{padding:12px 14px 14px; display:flex; flex-direction:column; gap:5px; flex:1}
+.card.paid{border:2px solid var(--paid)}
+.card .cat{font-size:12px; font-weight:800; color:var(--ink-soft)}
+.card h3{margin:0; font-size:20px}
+.card .meta{font-size:13px; color:var(--ink-soft)}
+.card .price{font-weight:800; font-size:14px}
+.match{align-self:flex-start; font-size:12px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--mint-soft); color:var(--ink)}
+.paidtag{align-self:flex-start; font-size:12px; font-weight:800; color:var(--paid); background:var(--paid-bg); border:1px solid var(--paid); border-radius:8px; padding:1px 7px}
+.team{font-size:12px; color:var(--ink-soft)}
+.cardrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto; padding-top:6px}
+.cardrow .btn{font-size:13px; padding:8px 11px}
+
+/* brief */
+.brief{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px; position:sticky; top:72px}
+.brief h2{font-size:24px; margin:0 0 4px}
+.brief .sub{font-size:13px; color:var(--ink-soft); margin:0 0 14px}
+.meter{display:flex; align-items:center; gap:14px; padding:12px; border-radius:var(--r-md); background:linear-gradient(120deg,var(--sun-soft),var(--rose-soft)); margin-bottom:14px}
+.meter svg{width:64px; height:64px; flex:none}
+.meter b{font-family:var(--display); font-size:15px; display:block}
+.meter span{font-size:13px; color:var(--ink-soft)}
+.brief dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:7px 12px; font-size:14px}
+.brief dt{color:var(--ink-soft)}
+.brief dd{margin:0; font-weight:800}
+.brief dd.empty{font-weight:400; color:var(--ink-soft)}
+.brief dd.fresh{animation:flash 1.2s ease}
+@keyframes flash{from{background:var(--sun-soft)} to{background:transparent}}
+@media (prefers-reduced-motion:reduce){.brief dd.fresh{animation:none}}
+.how{margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-soft)}
+.how a{font-weight:800}
+
+/* pannelli */
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:22px}
+.panel + .panel{margin-top:20px}
+.panel h2{font-size:26px; margin:0 0 10px}
+.panelhead{display:flex; gap:14px; align-items:center; margin-bottom:10px}
+.panelhead svg{width:56px; height:56px; flex:none}
+.panelhead h2{margin:0}
 .small{font-size:13px; color:var(--ink-soft)}
 .grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px}
 @media (max-width:900px){.grid2{grid-template-columns:1fr}}
-.panel + .panel{margin-top:20px}
-.budgetrow{display:grid; grid-template-columns:150px 1fr 110px; gap:10px; align-items:center; padding:8px 0; border-bottom:1px solid var(--line); font-size:14px}
+
+.budgetrow{display:grid; grid-template-columns:170px 1fr 110px; gap:10px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; font-weight:600}
 @media (max-width:560px){.budgetrow{grid-template-columns:1fr 90px}.budgetrow .track{grid-column:1/-1}}
-.track{height:10px; background:var(--surface-2); border-radius:6px; overflow:hidden}
-.track i{display:block; height:100%; background:var(--olive)}
-.track i.over{background:var(--paid)}
+.track{height:12px; background:var(--surface-2); border-radius:8px; overflow:hidden}
+.track i{display:block; height:100%; background:linear-gradient(90deg,var(--mint),var(--sky))}
+.track i.over{background:linear-gradient(90deg,var(--sun),var(--rose))}
 .steps{list-style:none; margin:0; padding:0}
-.steps li{display:grid; grid-template-columns:28px 1fr auto; gap:10px; align-items:start; padding:10px 0; border-bottom:1px solid var(--line)}
-.steps li.late .when{color:var(--paid); font-weight:700}
+.steps li{display:grid; grid-template-columns:28px 1fr auto; gap:10px; align-items:start; padding:11px 0; border-bottom:1px solid var(--line)}
+.steps li.late .when{color:var(--paid); font-weight:800}
 .steps li.done span.t{text-decoration:line-through; color:var(--ink-soft)}
 .steps .when{font-size:13px; color:var(--ink-soft); white-space:nowrap}
-.steps input{width:18px; height:18px; margin-top:3px; accent-color:var(--olive)}
-.drop{border:2px dashed var(--line); border-radius:18px; padding:22px; text-align:center; background:var(--surface)}
-.drop.over{border-color:var(--olive); background:var(--olive-soft)}
+.steps input{width:20px; height:20px; margin-top:2px; accent-color:var(--mint)}
+.drop{display:block; border:2px dashed var(--primary); border-radius:var(--r-md); padding:26px; text-align:center; background:var(--primary-soft); cursor:pointer}
+.drop.over{background:var(--sun-soft); border-color:var(--sun)}
 .thumbs{display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:8px; margin:14px 0}
-.thumbs img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:12px; border:1px solid var(--line)}
+.thumbs img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r-sm); border:1px solid var(--line)}
 .chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
-.chip{background:var(--olive-soft); color:var(--ink); border-radius:999px; padding:4px 10px; font-size:13px; font-weight:600}
+.chip{background:var(--primary-soft); color:var(--ink); border-radius:999px; padding:4px 11px; font-size:13px; font-weight:800}
 .swatches{display:flex; gap:6px; margin:8px 0}
-.swatches span{width:34px; height:34px; border-radius:50%; border:1px solid var(--line)}
-textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:10px 12px; min-height:110px}
-.ok{color:var(--olive); font-weight:700}
-.warn{color:var(--paid); font-weight:700}
-.team{font-size:13px; color:var(--ink-soft)}
-.cardrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto}
-.cardrow .btn{font-size:13px; padding:7px 10px}
-.score{display:inline-flex; align-items:center; gap:8px; font-weight:700}
-.score b{font-family:var(--serif); font-weight:400; font-size:34px; line-height:1}
-.leadcard{border:1px solid var(--line); border-radius:18px; padding:16px; background:var(--bg); margin-bottom:12px}
-.leadcard header{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:flex-start}
-.leadcard h3{margin:0; font-size:16px}
-.leadcard select{font:inherit; font-size:14px; padding:6px 8px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--ink)}
-.reasons{margin:8px 0; padding-left:18px; font-size:14px}
+.swatches span{width:36px; height:36px; border-radius:50%; border:2px solid var(--surface); box-shadow:0 0 0 1px var(--line)}
+textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); border:1.5px solid var(--line); border-radius:var(--r-md); padding:11px 13px; min-height:110px}
+.ok{color:var(--mint); font-weight:800}
+.warn{color:var(--paid); font-weight:800}
+.row{display:flex; gap:8px; justify-content:flex-end; flex-wrap:wrap; margin-top:14px}
+
+/* dialog */
+dialog{border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); color:var(--ink); padding:24px; max-width:540px; width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(30,15,50,.45)}
+dialog h3{font-size:26px; margin:0 0 8px}
+dialog pre{white-space:pre-wrap; font-family:var(--sans); background:var(--bg); border:1px solid var(--line); border-radius:var(--r-sm); padding:12px; font-size:14px}
+
+/* ===== FORNITORI ===== */
+.vhead{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:28px 0 18px}
+.vhead .who{display:flex; align-items:center; gap:16px}
+.vhead .who svg{width:72px; height:72px; border-radius:22px; flex:none}
+.vhead h1{font-size:40px; margin:0; font-weight:800}
+.vhead p{margin:4px 0 0; color:var(--ink-soft)}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:6px}
+.stat{border-radius:var(--r-md); padding:12px; background:var(--sky-soft)}
+.stat:nth-child(2){background:var(--mint-soft)} .stat:nth-child(3){background:var(--sun-soft)}
+.stat b{display:block; font-family:var(--display); font-size:34px; line-height:1}
+.stat span{font-size:13px; color:var(--ink-soft)}
+.demo{font-size:12px; color:var(--ink-soft)}
 .funnel{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px}
-.funnel div{background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:12px}
-.funnel b{display:block; font-family:var(--serif); font-weight:400; font-size:32px; line-height:1}
+.funnel div{border-radius:var(--r-md); padding:14px; background:var(--primary-soft)}
+.funnel div:nth-child(2){background:var(--sky-soft)} .funnel div:nth-child(3){background:var(--mint-soft)} .funnel div:nth-child(4){background:var(--rose-soft)}
+.funnel b{display:block; font-family:var(--display); font-size:32px; line-height:1}
 .funnel span{font-size:13px; color:var(--ink-soft)}
 @media (max-width:560px){.funnel{grid-template-columns:repeat(2,1fr)}}
+.leadcard{border:1px solid var(--line); border-radius:var(--r-md); padding:16px; background:var(--surface); margin-bottom:12px}
+.leadcard header{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:flex-start}
+.leadcard h3{margin:0; font-size:17px}
+.leadcard select{font:inherit; font-size:14px; padding:7px 9px; border-radius:var(--r-sm); border:1.5px solid var(--line); background:var(--surface); color:var(--ink)}
+.score{display:inline-flex; align-items:baseline; gap:8px; font-weight:800}
+.score b{font-family:var(--display); font-size:32px; line-height:1; color:var(--primary)}
+.reasons{margin:8px 0; padding-left:18px; font-size:14px}
 .qa{margin-bottom:14px}
-.qa label{display:block; font-weight:700; margin-bottom:6px}
+.qa label{display:block; font-weight:800; margin-bottom:6px}
 .profile dl{display:grid; grid-template-columns:auto 1fr; gap:8px 14px; margin:0; font-size:14px}
 .profile dt{color:var(--ink-soft)}
 .profile dd{margin:0}
-.criteria{counter-reset:c; list-style:none; padding:0}
-.criteria li{padding:8px 0; border-bottom:1px solid var(--line)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:14px}
+th,td{text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-weight:800}
+.bar{height:10px; border-radius:6px; background:var(--primary)}
+.bar.them{background:var(--line)}
+
+/* ===== PORTALE ===== */
+.article{max-width:760px; margin:0 auto; padding:26px 0 64px}
+.crumbs{font-size:13px; color:var(--ink-soft); font-weight:700}
+.arthero{border-radius:var(--r-lg); overflow:hidden; margin:14px 0 18px}
+.arthero svg{display:block; width:100%; height:auto}
+.article h1{font-size:clamp(34px,5vw,52px); margin:6px 0 10px; font-weight:800}
+.updated{font-size:13px; color:var(--ink-soft); margin-bottom:22px}
+.answer{display:grid; grid-template-columns:44px 1fr; gap:12px; background:var(--primary-soft); padding:16px 18px; border-radius:var(--r-md); margin-bottom:26px}
+.answer svg{width:44px; height:44px}
+.answer p{margin:0 0 8px} .answer p:last-child{margin:0}
+.article h2{font-size:28px; margin:34px 0 10px}
+.article p{max-width:68ch}
+.partner{border:2px solid var(--paid); background:var(--paid-bg); border-radius:var(--r-md); padding:16px; margin:26px 0}
+.partner .paidtag{margin-bottom:8px}
+.ask{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:linear-gradient(110deg,var(--primary),var(--rose)); color:#fff; border-radius:var(--r-lg); padding:18px 20px; margin:30px 0}
+.ask .who{display:flex; align-items:center; gap:12px}
+.ask svg{width:52px; height:52px; flex:none}
+.ask p{margin:0; font-weight:800}
+.ask .btn{background:#fff; color:#2D1E3E}
+.criteria{list-style:none; padding:0}
+.criteria li{padding:10px 0; border-bottom:1px solid var(--line)}
+.faq dt{font-weight:800; margin-top:14px}
+.faq dd{margin:4px 0 0}
+.sources{font-size:13px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:14px; margin-top:34px}
 </style>
 </head>
 <body>
@@ -224,14 +263,24 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
 <!-- ============ SPOSI ============ -->
 <section class="view" id="v-sposi">
   <div class="wrap">
-    <div class="brand"><b>Sposami.ai</b><span>il planner che vi ascolta</span></div>
     <div class="hero">
-      <h1>Raccontateci il vostro matrimonio. Vi diciamo da dove partire e a chi rivolgervi.</h1>
-      <p>Il vostro progetto resta salvato: budget, scadenze, ispirazioni e preventivi in un posto solo.</p>
+      <div class="mascot" data-gioia></div>
+      <div>
+        <p class="brand">Sposami.ai</p>
+        <h1>Ciao, sono Gioia. Organizziamo insieme il vostro matrimonio.</h1>
+        <p>Raccontatemi data, luogo e quante persone: io costruisco il piano, tengo d’occhio budget e scadenze e vi presento pochi fornitori adatti a voi, spiegandovi perché.</p>
+      </div>
+    </div>
+    <div class="stripe" id="stripe" aria-label="Da cosa partiamo">
+      <button type="button" class="tile t-lilac" data-ask="Da dove comincio? Siamo appena fidanzati."><span data-ill="anelli" data-seed="a1"></span>Da dove comincio?</button>
+      <button type="button" class="tile t-sun" data-ask="Aiutami a trovare la location giusta per noi."><span data-ill="location" data-seed="a2"></span>Trovare la location</button>
+      <button type="button" class="tile t-rose" data-ask="Che fotografo fa per noi?"><span data-ill="fotografo" data-seed="a3"></span>Scegliere il fotografo</button>
+      <button type="button" class="tile t-mint" data-ask="Quanto costa davvero un matrimonio nella nostra regione?"><span data-ill="budget" data-seed="a4"></span>Quanto costa davvero?</button>
+      <button type="button" class="tile t-sky" data-ask="Cosa dobbiamo fare questo mese per il nostro matrimonio?"><span data-ill="calendario" data-seed="a5"></span>Cosa fare questo mese</button>
     </div>
 
     <div class="subtabs" role="toolbar" aria-label="Sezioni del progetto" data-group="s">
-      <button type="button" data-p="s-chat" aria-pressed="true">Assistente</button>
+      <button type="button" data-p="s-chat" aria-pressed="true">Parla con Gioia</button>
       <button type="button" data-p="s-piano" aria-pressed="false">Budget e scadenze</button>
       <button type="button" data-p="s-stile" aria-pressed="false">Il vostro stile</button>
       <button type="button" data-p="s-prev" aria-pressed="false">Preventivi</button>
@@ -242,15 +291,21 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
         <!-- CHAT -->
         <div class="pane on" id="s-chat">
           <div class="chat">
+            <div class="chathead"><span data-gioia></span><div><b>Gioia</b><span><i class="online"></i>il vostro planner, sempre disponibile</span></div></div>
             <div class="log" id="log" aria-live="polite"></div>
             <div class="starters" id="starters">
               <button type="button">Ci sposiamo il 18 settembre 2027 in Puglia, circa 120 invitati, budget 40.000 €, ci piacciono le masserie</button>
               <button type="button">Budget 30.000 € in Toscana, 80 persone, vogliamo una cosa intima in un borgo a giugno 2027</button>
               <button type="button">Siamo appena fidanzati e non sappiamo da dove cominciare</button>
             </div>
+            <div class="quick" id="quick">
+              <button type="button" data-ask="Cosa manca al nostro piano?">Cosa manca al nostro piano?</button>
+              <button type="button" data-ask="Proponici una squadra di fornitori che lavorano bene insieme.">Una squadra di fornitori</button>
+              <button type="button" data-ask="Come dividiamo il budget?">Come dividiamo il budget?</button>
+            </div>
             <form class="composer" id="composer">
               <label for="input" style="position:absolute;left:-9999px">Scrivi un messaggio</label>
-              <textarea id="input" rows="1" placeholder="Scrivete qui…"></textarea>
+              <textarea id="input" rows="1" placeholder="Scrivete a Gioia…"></textarea>
               <button class="btn ghost" type="button" id="stop" hidden>Ferma</button>
               <button class="btn" type="submit" id="send">Invia</button>
             </form>
@@ -260,12 +315,12 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
         <!-- PIANO -->
         <div class="pane" id="s-piano">
           <div class="panel">
-            <h2 style="font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px">Dove vanno i vostri soldi</h2>
+            <div class="panelhead"><span data-ill="budget" data-seed="p1"></span><h2>Ecco come dividerei il vostro budget</h2></div>
             <p class="small" id="budgetNote" style="margin:0 0 10px"></p>
             <div id="budgetRows"></div>
           </div>
           <div class="panel">
-            <h2 style="font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px">Cosa fare e quando</h2>
+            <div class="panelhead"><span data-ill="calendario" data-seed="p2"></span><h2>La vostra tabella di marcia</h2></div>
             <p class="small" id="timelineNote" style="margin:0 0 6px"></p>
             <ol class="steps" id="steps"></ol>
           </div>
@@ -274,14 +329,14 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
         <!-- STILE -->
         <div class="pane" id="s-stile">
           <div class="panel">
-            <h2 style="font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px">Mostrateci cosa vi piace</h2>
-            <p class="small" style="margin:0 0 14px">Caricate fino a 6 foto salvate da Pinterest o Instagram. Riconosciamo lo stile e lo usiamo per scegliere i fornitori adatti.</p>
+            <div class="panelhead"><span data-ill="stile" data-seed="p3"></span><h2>Mostratemi cosa vi piace</h2></div>
+            <p class="small" style="margin:0 0 14px">Caricate fino a 6 foto salvate da Pinterest o Instagram. Riconosco il vostro stile e lo uso per scegliere i fornitori adatti.</p>
             <label class="drop" id="dropStile">
               <input type="file" id="fileStile" accept="image/*" multiple hidden>
               <strong>Scegliete le foto</strong> o trascinatele qui
             </label>
             <div class="thumbs" id="thumbsStile"></div>
-            <button class="btn" type="button" id="btnStile" disabled>Riconosci il nostro stile</button>
+            <button class="btn" type="button" id="btnStile" disabled>Gioia, che stile è il nostro?</button>
             <div id="outStile" style="margin-top:16px"></div>
           </div>
         </div>
@@ -289,15 +344,15 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
         <!-- PREVENTIVI -->
         <div class="pane" id="s-prev">
           <div class="panel">
-            <h2 style="font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px">Capire un preventivo</h2>
-            <p class="small" style="margin:0 0 14px">Caricate la foto di un preventivo o incollatene il testo. Vi diciamo cosa è incluso, cosa manca e cosa chiedere al fornitore all’appuntamento.</p>
+            <div class="panelhead"><span data-ill="preventivo" data-seed="p4"></span><h2>Fatemi leggere un preventivo</h2></div>
+            <p class="small" style="margin:0 0 14px">Caricate la foto di un preventivo o incollatene il testo. Vi dico cosa è incluso, cosa manca e cosa chiedere al fornitore all’appuntamento.</p>
             <label class="drop" id="dropPrev">
               <input type="file" id="filePrev" accept="image/*" hidden>
               <strong>Foto del preventivo</strong>
             </label>
             <div class="thumbs" id="thumbsPrev"></div>
             <textarea class="box" id="txtPrev" placeholder="…oppure incollate qui il testo del preventivo"></textarea>
-            <div class="row" style="justify-content:flex-start"><button class="btn" type="button" id="btnPrev">Analizza il preventivo</button></div>
+            <div class="row" style="justify-content:flex-start"><button class="btn" type="button" id="btnPrev">Leggilo tu, Gioia</button></div>
             <div id="outPrev" style="margin-top:16px"></div>
           </div>
         </div>
@@ -305,7 +360,8 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
 
       <aside class="brief" aria-label="Il vostro matrimonio">
         <h2>Il vostro matrimonio</h2>
-        <p class="sub">Salvato su questo dispositivo. È quello che riceve il fornitore se chiedete un appuntamento.</p>
+        <p class="sub">Lo aggiorno io mentre parliamo. È quello che mando al fornitore quando chiedete un appuntamento.</p>
+        <div class="meter" id="meter"></div>
         <dl id="brief"></dl>
         <div class="chips" id="briefTags"></div>
         <div class="how">I fornitori in evidenza pagano per avere più spazio e sono sempre segnalati. Non scavalcano i vostri filtri: zona, data libera, budget e ospiti. <a href="#portale">Come scegliamo i fornitori</a></div>
@@ -318,10 +374,10 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
 <section class="view" id="v-fornitori">
   <div class="wrap">
     <div class="vhead">
-      <div>
+      <div class="who"><span data-ill="location" data-seed="L1"></span><div>
         <h1>Masseria Lumen</h1>
         <p>Area fornitore · location in Valle d’Itria · pacchetto Partner WR</p>
-      </div>
+      </div></div>
       <span class="demo">Vista demo: qui compaiono tutte le richieste fatte nell’anteprima</span>
     </div>
 
@@ -386,12 +442,13 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
   <div class="wrap">
     <article class="article">
       <div class="crumbs">Sposami.ai › Toscana › Fotografi</div>
+      <div class="arthero" id="artHero"></div>
       <h1>Quanto costa un fotografo di matrimonio in Toscana?</h1>
       <div class="updated">Aggiornato il 2 novembre 2026 · prezzi dichiarati da 3 fotografi verificati (dati di esempio)</div>
-      <div class="answer">
-        <p>In Toscana un fotografo di matrimonio costa in genere tra <strong id="pmin">–</strong> e <strong id="pmax">–</strong> per il servizio completo, a seconda di ore di copertura, secondo fotografo e album.</p>
+      <div class="answer"><span data-gioia></span><div>
+        <p>Ve lo dico in breve: in Toscana un fotografo di matrimonio costa in genere tra <strong id="pmin">–</strong> e <strong id="pmax">–</strong> per il servizio completo, a seconda di ore di copertura, secondo fotografo e album.</p>
         <p>Le fasce più alte riguardano lo stile reportage d’autore e le zone del Chianti e della Val d’Orcia, dove i matrimoni sono spesso su più giorni.</p>
-      </div>
+      </div></div>
       <h2>Prezzi per fotografo</h2>
       <div class="tablewrap"><table id="ptable"></table></div>
       <h2>Cosa fa cambiare il prezzo?</h2>
@@ -403,8 +460,8 @@ textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); b
       <h2>Quando prenotare il fotografo?</h2>
       <p>Subito dopo la location: i fotografi lavorano su una sola data al giorno, e le date di sabato in alta stagione sono le prime a sparire.</p>
       <div class="ask">
-        <p>Avete già data e numero di ospiti? Chiedete all’assistente quali fotografi sono liberi.</p>
-        <a class="btn" href="#sposi" id="askLink">Chiedi all’assistente</a>
+        <div class="who"><span data-gioia></span><p>Avete già data e numero di ospiti? Ditemelo e vi dico io quali fotografi sono liberi.</p></div>
+        <a class="btn" href="#sposi" id="askLink">Chiedi a Gioia</a>
       </div>
       <h2 id="criteri">Come scegliamo i fornitori</h2>
       <ol class="criteria">
@@ -622,7 +679,7 @@ function demoChat(turns){
   const top=(res.risultati||[]).slice(0,3);
   if(!top.length){ parts.push(`In ${b.regione} non ho ancora fornitori di questa categoria compatibili con il vostro brief. Nella versione completa il catalogo copre tutte le regioni.`); }
   else{
-    parts.push(`Ecco ${top.length===1?"il fornitore più adatto":"i "+top.length+" più adatti"} a voi per la categoria ${cat}:`);
+    parts.push(`Secondo me ${top.length===1?"questo è il fornitore più adatto":"questi sono i "+top.length+" più adatti"} a voi per la categoria ${cat}:`);
     parts.push(top.map(r=>`- [[${r.id}]]: ${r.motivi?.[0]||"in linea con il vostro brief"}${r.in_evidenza_a_pagamento?" (in evidenza a pagamento)":""}${r.limiti?.length?". Attenzione: "+r.limiti[0]:""}.`).join("\n"));
     if(res.gia_occupati_quella_data?.length) parts.push(`Già occupati nella vostra data: ${res.gia_occupati_quella_data.join(", ")}.`);
     const team=byId[top[0].id]?.squadra?.map(x=>byId[x]?.nome).filter(Boolean)||[];
@@ -631,6 +688,87 @@ function demoChat(turns){
   const next = !b.data ? "Avete già una data, anche indicativa?" : !b.budget ? "Che budget totale avete in mente? Così lo divido per voce nella sezione Budget e scadenze." : cat==="location" ? "Volete che passiamo al fotografo?" : "Su quale altra categoria vi aiuto?";
   parts.push(next);
   return parts.join("\n\n")+DEMO_NOTE;
+}
+
+/* ====== ILLUSTRAZIONI (SVG originali, nessuna immagine esterna) ====== */
+function gioiaSVG(){
+  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gioia">
+  <circle cx="60" cy="60" r="58" fill="#ECE6FF"/>
+  <path d="M22 62c0-24 17-40 38-40s38 16 38 40v30H22z" fill="#5A3E2B"/>
+  <circle cx="60" cy="64" r="28" fill="#FFD9C2"/>
+  <path d="M32 58c4-18 18-26 30-24 12 2 22 10 26 22-10-6-22-8-30-14-6 8-16 13-26 16z" fill="#5A3E2B"/>
+  <circle cx="50" cy="66" r="3.2" fill="#2D1E3E"/><circle cx="70" cy="66" r="3.2" fill="#2D1E3E"/>
+  <circle cx="44" cy="74" r="4.5" fill="#FF6F91" opacity=".45"/><circle cx="76" cy="74" r="4.5" fill="#FF6F91" opacity=".45"/>
+  <path d="M51 77q9 8 18 0" stroke="#2D1E3E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g transform="translate(60 31)">
+    <circle cx="-22" cy="6" r="6" fill="#FFB238"/><circle cx="-22" cy="6" r="2.4" fill="#fff"/>
+    <circle cx="-8" cy="0" r="7" fill="#FF6F91"/><circle cx="-8" cy="0" r="2.6" fill="#fff"/>
+    <circle cx="8" cy="0" r="7" fill="#6C4BD8"/><circle cx="8" cy="0" r="2.6" fill="#fff"/>
+    <circle cx="22" cy="6" r="6" fill="#3FBF8F"/><circle cx="22" cy="6" r="2.4" fill="#fff"/>
+  </g>
+  <path d="M30 104c6-12 18-16 30-16s24 4 30 16" fill="#6C4BD8"/>
+</svg>`;
+}
+const PALETTES=[["#6C4BD8","#FF6F91"],["#3FBF8F","#4BA3F2"],["#FFB238","#FF6F91"],["#4BA3F2","#6C4BD8"],["#FF6F91","#FFB238"],["#3FBF8F","#FFB238"]];
+function hashStr(s){ let h=0; for(const c of String(s)) h=(h*31+c.charCodeAt(0))|0; return Math.abs(h); }
+const ICONS={
+  location:`<path d="M-26 22V-2a26 26 0 0 1 52 0v24" fill="none" stroke="#fff" stroke-width="5"/><path d="M-34 24h68" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="0" cy="-6" r="5" fill="#fff"/>`,
+  fotografo:`<rect x="-28" y="-14" width="56" height="36" rx="8" fill="none" stroke="#fff" stroke-width="5"/><circle cx="0" cy="4" r="11" fill="none" stroke="#fff" stroke-width="5"/><path d="M-10-14l5-9h10l5 9" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>`,
+  fiori:`<circle cx="0" cy="-12" r="8" fill="#fff"/><circle cx="-13" cy="-4" r="8" fill="#fff" opacity=".85"/><circle cx="13" cy="-4" r="8" fill="#fff" opacity=".85"/><path d="M0-2v28M0 14l-10-8M0 14l10-8" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`,
+  musica:`<path d="M-10 18V-18l26-6v34" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><circle cx="-16" cy="18" r="7" fill="#fff"/><circle cx="10" cy="10" r="7" fill="#fff"/>`,
+  catering:`<circle cx="0" cy="4" r="20" fill="none" stroke="#fff" stroke-width="5"/><circle cx="0" cy="4" r="9" fill="#fff" opacity=".6"/><path d="M-34-14v36M34-14v12a6 6 0 0 1-6 6v18" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>`,
+  "wedding planner":`<rect x="-22" y="-22" width="44" height="50" rx="6" fill="none" stroke="#fff" stroke-width="5"/><path d="M-12-6h24M-12 6h24M-12 18h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M-8-26h16" stroke="#fff" stroke-width="6" stroke-linecap="round"/>`,
+  budget:`<circle cx="0" cy="2" r="24" fill="none" stroke="#fff" stroke-width="5"/><path d="M8-8a12 12 0 1 0 0 20M-14 0h16M-14 6h16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+  calendario:`<rect x="-24" y="-18" width="48" height="42" rx="7" fill="none" stroke="#fff" stroke-width="5"/><path d="M-24-4h48M-12-26v12M12-26v12" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="8" cy="12" r="5" fill="#fff"/>`,
+  stile:`<path d="M-20 20l20-44 20 44z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><circle cx="16" cy="-14" r="7" fill="#fff"/><circle cx="-18" cy="-10" r="5" fill="#fff" opacity=".8"/>`,
+  preventivo:`<path d="M-20-26h28l12 12v40h-40z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><path d="M-10-4h20M-10 8h20M-10 18h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`,
+  anelli:`<circle cx="-10" cy="4" r="16" fill="none" stroke="#fff" stroke-width="5"/><circle cx="12" cy="4" r="16" fill="none" stroke="#fff" stroke-width="5"/><path d="M-14-18l4-8 4 8" fill="#fff"/>`
+};
+function sceneSVG(kind, seed, w=320, h=120){
+  const [a,b]=PALETTES[hashStr(seed||kind)%PALETTES.length], id="g"+hashStr(kind+seed+w);
+  const icon=ICONS[kind]||ICONS.anelli;
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+  <rect width="${w}" height="${h}" fill="url(#${id})"/>
+  <circle cx="${w*0.12}" cy="${h*0.9}" r="${h*0.55}" fill="#fff" opacity=".12"/>
+  <circle cx="${w*0.92}" cy="${h*0.08}" r="${h*0.45}" fill="#fff" opacity=".14"/>
+  <circle cx="${w*0.78}" cy="${h*0.82}" r="${h*0.18}" fill="#fff" opacity=".18"/>
+  <g transform="translate(${w/2} ${h/2}) scale(${Math.min(w,h)/110})">${icon}</g>
+</svg>`;
+}
+function iconTile(kind, seed){ return sceneSVG(kind, seed, 60, 60); }
+function hillsSVG(){
+  return `<svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE3EA"/><stop offset="1" stop-color="#FFF1D6"/></linearGradient></defs>
+  <rect width="760" height="240" fill="url(#sky)"/>
+  <circle cx="600" cy="70" r="38" fill="#FFB238"/>
+  <path d="M0 170q120-70 250-20t260-10 250 10v90H0z" fill="#9FD9B8"/>
+  <path d="M0 200q160-50 330 0t430-20v60H0z" fill="#3FBF8F"/>
+  <g fill="#2E7D5B"><path d="M150 168l7-50 7 50z"/><path d="M175 172l6-40 6 40z"/><path d="M470 160l7-52 7 52z"/></g>
+  <path d="M120 200q20-6 40 0" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/>
+  <g transform="translate(380 120)"><rect x="-46" y="-28" width="92" height="60" rx="12" fill="#6C4BD8"/><circle cx="0" cy="2" r="19" fill="#fff"/><circle cx="0" cy="2" r="11" fill="#2D1E3E"/><rect x="-18" y="-40" width="36" height="14" rx="5" fill="#6C4BD8"/><circle cx="32" cy="-16" r="5" fill="#FFB238"/></g>
+</svg>`;
+}
+function ringSVG(pct){
+  const r=26, c=2*Math.PI*r, off=c*(1-pct/100);
+  return `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="${r}" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="8"/><circle cx="32" cy="32" r="${r}" fill="none" stroke="#6C4BD8" stroke-width="8" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 32 32)"/><text x="32" y="37" text-anchor="middle" font-size="15" font-weight="800" fill="#2D1E3E" font-family="Nunito Sans, sans-serif">${pct}%</text></svg>`;
+}
+function fillIllustrations(){
+  document.querySelectorAll("[data-gioia]").forEach(el=>el.innerHTML=gioiaSVG());
+  document.querySelectorAll("[data-ill]").forEach(el=>el.innerHTML=iconTile(el.dataset.ill, el.dataset.seed||el.dataset.ill));
+  const hero=document.getElementById("artHero"); if(hero) hero.innerHTML=hillsSVG();
+  document.documentElement.style.setProperty("--gioia-avatar", `url("data:image/svg+xml;utf8,${encodeURIComponent(gioiaSVG())}")`);
+}
+function renderMeter(){
+  const el=document.getElementById("meter"); if(!el) return;
+  const core=["data","regione","ospiti","budget","stile","rito","priorita"];
+  const filled=core.filter(k=>state.brief[k]).length;
+  const steps=Object.values(state.done||{}).filter(Boolean).length;
+  const pct=Math.round(filled/core.length*70 + Math.min(steps,11)/11*30);
+  let days="";
+  const iso=state.brief.data_iso||""; const m=iso.match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/);
+  if(m){ const d=new Date(+m[1], +m[2]-1, +(m[3]||15)); const n=Math.ceil((d-new Date())/86400000); if(n>0) days = m[3] ? `Mancano ${n} giorni al vostro sì` : `Mancano circa ${Math.round(n/30)} mesi`; }
+  el.innerHTML = ringSVG(pct) + `<div><b>${pct<15?"Iniziamo insieme":pct<60?"Il progetto prende forma":"Siete a buon punto"}</b><span>${esc(days || "Raccontatemi la data e preparo il conto alla rovescia")}</span></div>`;
 }
 
 /* ====== ROUTING ====== */
@@ -664,6 +802,7 @@ function renderBrief(fresh=[]){
     dl.append(dt,dd);
   }
   document.getElementById("briefTags").innerHTML = state.tags.map(t=>`<span class="chip">${esc(t)}</span>`).join("");
+  renderMeter();
 }
 function briefLines(){ return CAMPI.filter(([k])=>state.brief[k]).map(([k,l])=>`${l}: ${state.brief[k]}`).concat(state.tags.length?["Parole di stile dalle foto: "+state.tags.join(", ")]:[]); }
 const num = s => { const m=String(s||"").replace(/\./g,"").match(/\d+/); return m?Number(m[0]):0; };
@@ -722,7 +861,7 @@ const TOOLS = [
    }}
 ];
 
-const RULES = `Sei Sposami.ai, un assistente che aiuta una coppia italiana a organizzare il proprio matrimonio. Parli con gli sposi in italiano, dando del "voi", con tono caldo, concreto e breve.
+const RULES = `Sei Gioia, l'assistente di Sposami.ai che aiuta una coppia italiana a organizzare il proprio matrimonio. Parli sempre in prima persona ("vi consiglio", "ho salvato", "secondo me"), in italiano, dando del "voi" agli sposi, con tono caldo, allegro e concreto, frasi brevi. Se ti chiedono chi sei: sei Gioia, un'assistente AI, non una persona.
 
 Come lavori:
 - Fai al massimo 1 o 2 domande per messaggio. Prima capisci: data (giorno se lo sanno), regione e zona, ospiti, budget totale, stile, rito, priorità.
@@ -754,16 +893,16 @@ function cardsFor(ids){
     const f=byId[id], c=compat(f,state.brief,state.tags), el=document.createElement("div");
     el.className="card"+(f.pagato?" paid":"");
     const team=(f.squadra||[]).map(x=>byId[x]?.nome).filter(Boolean);
-    el.innerHTML=(f.pagato?`<span class="paidtag">In evidenza · a pagamento</span>`:"")+
+    el.innerHTML=`<span class="pic">${sceneSVG(f.categoria,f.id)}</span><div class="body">`+(f.pagato?`<span class="paidtag">In evidenza · a pagamento</span>`:"")+
       `<span class="cat">${esc(f.categoria)} · ${esc(f.zona)}</span><h3>${esc(f.nome)}</h3>`+
+      `<span class="match">Compatibilità ${c.score}%</span>`+
       `<span class="price">${esc(prezzo(f))}</span>`+(f.min!=null?`<span class="meta">${f.min}–${f.max} ospiti</span>`:"")+
       `<span class="meta">${f.voto} su 5 · ${f.recensioni} recensioni verificate</span>`+
-      `<span class="meta"><strong>Compatibilità ${c.score}%</strong></span>`+
-      (team.length?`<span class="team">Lavora spesso con: ${esc(team.join(", "))}</span>`:"");
+      (team.length?`<span class="team">Lavora spesso con: ${esc(team.join(", "))}</span>`:"")+`</div>`;
     const row=document.createElement("div"); row.className="cardrow";
     const b1=document.createElement("button"); b1.className="btn"; b1.type="button"; b1.textContent="Chiedi un appuntamento"; b1.onclick=()=>requestAppointment(f);
-    const b2=document.createElement("button"); b2.className="btn ghost"; b2.type="button"; b2.textContent="Domande da fare"; b2.onclick=()=>prepQuestions(f);
-    row.append(b1,b2); el.append(row); wrap.append(el);
+    const b2=document.createElement("button"); b2.className="btn ghost"; b2.type="button"; b2.textContent="Cosa gli chiedo?"; b2.onclick=()=>prepQuestions(f);
+    row.append(b1,b2); el.querySelector(".body").append(row); wrap.append(el);
   }
   return wrap;
 }
@@ -775,7 +914,7 @@ function addMsg(role,text){
 function setStatus(t){ if(statusEl) statusEl.textContent=t; }
 function renderChat(){
   log.innerHTML="";
-  const h=addMsg("a"); h.querySelector(".txt").innerHTML="<p>Ciao, e congratulazioni! Raccontatemi il matrimonio che avete in mente: quando, dove, più o meno quante persone. Il vostro progetto resta salvato, potete tornare quando volete.</p>";
+  const h=addMsg("a"); h.querySelector(".txt").innerHTML="<p>Ciao, sono Gioia, e congratulazioni! 💍</p><p>Raccontatemi il matrimonio che avete in mente: quando, dove, più o meno quante persone. Io tengo tutto in ordine qui a destra, e potete tornare quando volete.</p>";
   for(const t of state.turns){
     if(t.role==="user") addMsg("u",t.content);
     else { const m=addMsg("a"); const r=renderMd(t.content); m.querySelector(".txt").innerHTML=r.html; if(r.ids.length) m.append(cardsFor(r.ids)); }
@@ -834,7 +973,7 @@ function requestAppointment(f){
 }
 
 async function prepQuestions(f){
-  openDialog("Domande per "+f.nome, `<p class="status">Preparo le domande…</p>`);
+  openDialog("Cosa chiedere a "+f.nome, `<p class="status">Preparo le domande…</p>`);
   const s=await getSample(); const body=document.getElementById("dlgBody");
   if(!s){ body.innerHTML=`<p class="err">${NO_AI}</p>`; return; }
   try{
@@ -877,7 +1016,7 @@ function renderSteps(){
     if(wedding){ const d=new Date(wedding); d.setMonth(d.getMonth()-mesi); when="entro "+d.toLocaleDateString("it-IT",{month:"long",year:"numeric"}); late = !done && d<today; if(late) when="in ritardo: era "+when.replace("entro ",""); }
     li.className=(done?"done ":"")+(late?"late":"");
     li.innerHTML=`<input type="checkbox" ${done?"checked":""} aria-label="${esc(t)}"><span class="t">${esc(t)}</span><span class="when">${esc(when)}</span>`;
-    li.querySelector("input").onchange=e=>{ state.done[k]=e.target.checked; save(); renderSteps(); };
+    li.querySelector("input").onchange=e=>{ state.done[k]=e.target.checked; save(); renderSteps(); renderMeter(); };
     ol.append(li);
   }
 }
@@ -1089,6 +1228,8 @@ document.getElementById("reset").onclick=()=>{
   stileFiles=[]; prevFile=null; ["thumbsStile","thumbsPrev","outStile","outPrev"].forEach(id=>document.getElementById(id).innerHTML="");
 };
 
+fillIllustrations();
+document.querySelectorAll("[data-ask]").forEach(b=>b.addEventListener("click",()=>{ openPane("s","s-chat"); document.getElementById("v-sposi").scrollIntoView({block:"start"}); send(b.dataset.ask); }));
 renderBrief(); renderChat(); renderQA(); show(); detectMode();
 
 </script>
