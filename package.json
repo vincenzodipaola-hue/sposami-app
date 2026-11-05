@@ -1,0 +1,7 @@
+{
+  "name": "sposami-app",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Sposami.ai — anteprima web app (assistente AI per sposi, area fornitori, portale GEO)",
+  "engines": { "node": ">=18" }
+}
