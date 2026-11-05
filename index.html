@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sposami.ai — Gioia, il vostro planner AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Quanto costa un fotografo di matrimonio in Toscana?","inLanguage":"it","dateModified":"2026-11-02","author":{"@type":"Organization","name":"Sposami.ai"}}
+</script>
+<style>:root{
+  --bg:#FBF8FF; --surface:#FFFFFF; --surface-2:#F3EEFF; --ink:#2D1E3E; --ink-soft:#6B5E7B; --line:#E7DFF3;
+  --primary:#6C4BD8; --primary-ink:#FFFFFF; --primary-soft:#ECE6FF;
+  --sun:#FFB238; --sun-soft:#FFF1D6; --mint:#3FBF8F; --mint-soft:#DDF6EC; --rose:#FF6F91; --rose-soft:#FFE3EA; --sky:#4BA3F2; --sky-soft:#E0F0FF;
+  --paid:#B4560C; --paid-bg:#FFF0DE; --focus:#2F6FDB;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --sans:"Nunito Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --r-lg:28px; --r-md:18px; --r-sm:12px;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17121F; --surface:#211A2C; --surface-2:#2B2238; --ink:#F3EEFA; --ink-soft:#B9AECA; --line:#3A3049;
+    --primary:#A88BFF; --primary-ink:#17121F; --primary-soft:#2F2546;
+    --sun-soft:#3A2D16; --mint-soft:#183329; --rose-soft:#3A1E27; --sky-soft:#162B3D;
+    --paid:#FFB45E; --paid-bg:#3A2914; --focus:#8DB4FF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17121F; --surface:#211A2C; --surface-2:#2B2238; --ink:#F3EEFA; --ink-soft:#B9AECA; --line:#3A3049;
+  --primary:#A88BFF; --primary-ink:#17121F; --primary-soft:#2F2546;
+  --sun-soft:#3A2D16; --mint-soft:#183329; --rose-soft:#3A1E27; --sky-soft:#162B3D;
+  --paid:#FFB45E; --paid-bg:#3A2914; --focus:#8DB4FF; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; min-height:100%; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--surface)}
+img,svg{max-width:100%}
+a{color:var(--primary)}
+:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
+button{font:inherit; cursor:pointer}
+h1,h2,h3,h4{font-family:var(--display); letter-spacing:-.01em; line-height:1.1}
+
+/* barra in alto */
+.devbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  display:flex; gap:12px; align-items:center; justify-content:space-between; padding:10px 20px; flex-wrap:wrap}
+.devbar .note{font-size:13px; color:var(--ink-soft)}
+.tabs{display:flex; gap:4px; background:var(--surface-2); padding:4px; border-radius:999px}
+.tabs a{text-decoration:none; color:var(--ink-soft); font-size:14px; font-weight:700; padding:7px 16px; border-radius:999px}
+.tabs a[aria-current="page"]{background:var(--primary); color:var(--primary-ink)}
+
+.view{display:none}
+.view.on{display:block}
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
+
+/* ===== HERO ===== */
+.hero{display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; padding:30px 0 26px}
+@media (max-width:760px){ .hero{grid-template-columns:1fr; gap:14px} }
+.hero .mascot{width:150px; height:150px}
+@media (max-width:760px){ .hero .mascot{width:96px; height:96px} }
+.brand{font-size:14px; font-weight:800; color:var(--primary); margin:0 0 6px}
+.hero h1{font-size:clamp(34px,5.4vw,58px); margin:0 0 12px; font-weight:800}
+.hero p{margin:0; color:var(--ink-soft); max-width:60ch; font-size:17px}
+
+.stripe{display:flex; gap:10px; overflow-x:auto; padding:2px 0 22px; scrollbar-width:none}
+.stripe::-webkit-scrollbar{display:none}
+.tile{flex:0 0 auto; display:flex; align-items:center; gap:10px; border:0; border-radius:999px; padding:6px 16px 6px 6px; font-weight:800; font-size:14px; color:var(--ink); text-align:left}
+.tile svg{width:38px; height:38px; flex:none}
+.t-sun{background:var(--sun-soft)} .t-mint{background:var(--mint-soft)} .t-rose{background:var(--rose-soft)} .t-sky{background:var(--sky-soft)} .t-lilac{background:var(--primary-soft)}
+
+/* ===== SUBTAB ===== */
+.subtabs{display:flex; gap:8px; flex-wrap:wrap; margin:0 0 16px}
+.subtabs button{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:9px 16px; font-weight:800; font-size:14px}
+.subtabs button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.pane{display:none}
+.pane.on{display:block}
+
+/* ===== APP ===== */
+.app{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:22px; padding-bottom:48px; align-items:start}
+@media (max-width:920px){ .app{grid-template-columns:1fr} .brief{order:-1} }
+.chat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); display:flex; flex-direction:column; min-height:540px; overflow:hidden}
+.chathead{display:flex; align-items:center; gap:12px; padding:14px 18px; background:linear-gradient(90deg,var(--primary-soft),var(--rose-soft)); border-bottom:1px solid var(--line)}
+.chathead svg{width:44px; height:44px; flex:none}
+.chathead b{display:block; font-family:var(--display); font-size:18px}
+.chathead span{font-size:13px; color:var(--ink-soft)}
+.online{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--mint); margin-right:4px}
+.log{flex:1; padding:20px; display:flex; flex-direction:column; gap:16px; overflow:auto; max-height:66vh}
+.msg{max-width:90%}
+.msg.u{align-self:flex-end; background:var(--primary); color:var(--primary-ink); padding:10px 15px; border-radius:20px 20px 6px 20px; font-weight:600}
+.msg.a{align-self:flex-start; display:grid; grid-template-columns:34px 1fr; gap:10px}
+.msg.a::before{content:""; width:34px; height:34px; border-radius:50%; background:var(--gioia-avatar) center/cover; grid-row:1 / span 3}
+.msg.a > *{grid-column:2}
+.msg.a .txt{background:var(--surface-2); padding:12px 15px; border-radius:6px 20px 20px 20px}
+.msg.a .txt p{margin:0 0 10px} .msg.a .txt p:last-child{margin:0}
+.msg.a .txt ul{margin:0 0 10px; padding-left:20px}
+.msg.a .txt .ref{font-weight:800; color:var(--primary)}
+.msg .status{color:var(--ink-soft); font-size:14px; font-style:italic}
+.msg .err{color:var(--paid); font-size:14px; font-weight:700}
+.starters{display:flex; flex-wrap:wrap; gap:8px; padding:0 20px 14px}
+.starters button{background:var(--surface); border:1.5px dashed var(--primary); color:var(--ink); border-radius:16px; padding:8px 12px; font-size:14px; text-align:left; font-weight:600}
+.quick{display:flex; gap:6px; flex-wrap:wrap; padding:10px 14px 0}
+.quick button{background:var(--surface-2); border:0; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700; color:var(--ink)}
+.composer{display:flex; gap:8px; padding:14px; border-top:1px solid var(--line)}
+.composer textarea{flex:1; resize:none; font:inherit; color:var(--ink); background:var(--bg); border:1.5px solid var(--line); border-radius:16px; padding:11px 14px; min-height:48px; max-height:140px}
+.btn{background:var(--primary); color:var(--primary-ink); border:0; border-radius:14px; padding:11px 18px; font-weight:800}
+.btn.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--line)}
+.btn[disabled]{opacity:.5; cursor:default}
+
+/* schede fornitore */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; margin-top:10px}
+.card{border:1px solid var(--line); border-radius:var(--r-md); background:var(--surface); display:flex; flex-direction:column; overflow:hidden}
+.card .pic{height:112px; display:block}
+.card .pic svg{width:100%; height:100%; display:block}
+.card .body{padding:12px 14px 14px; display:flex; flex-direction:column; gap:5px; flex:1}
+.card.paid{border:2px solid var(--paid)}
+.card .cat{font-size:12px; font-weight:800; color:var(--ink-soft)}
+.card h3{margin:0; font-size:20px}
+.card .meta{font-size:13px; color:var(--ink-soft)}
+.card .price{font-weight:800; font-size:14px}
+.match{align-self:flex-start; font-size:12px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--mint-soft); color:var(--ink)}
+.paidtag{align-self:flex-start; font-size:12px; font-weight:800; color:var(--paid); background:var(--paid-bg); border:1px solid var(--paid); border-radius:8px; padding:1px 7px}
+.team{font-size:12px; color:var(--ink-soft)}
+.cardrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto; padding-top:6px}
+.cardrow .btn{font-size:13px; padding:8px 11px}
+
+/* brief */
+.brief{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px; position:sticky; top:72px}
+.brief h2{font-size:24px; margin:0 0 4px}
+.brief .sub{font-size:13px; color:var(--ink-soft); margin:0 0 14px}
+.meter{display:flex; align-items:center; gap:14px; padding:12px; border-radius:var(--r-md); background:linear-gradient(120deg,var(--sun-soft),var(--rose-soft)); margin-bottom:14px}
+.meter svg{width:64px; height:64px; flex:none}
+.meter b{font-family:var(--display); font-size:15px; display:block}
+.meter span{font-size:13px; color:var(--ink-soft)}
+.brief dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:7px 12px; font-size:14px}
+.brief dt{color:var(--ink-soft)}
+.brief dd{margin:0; font-weight:800}
+.brief dd.empty{font-weight:400; color:var(--ink-soft)}
+.brief dd.fresh{animation:flash 1.2s ease}
+@keyframes flash{from{background:var(--sun-soft)} to{background:transparent}}
+@media (prefers-reduced-motion:reduce){.brief dd.fresh{animation:none}}
+.how{margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-soft)}
+.how a{font-weight:800}
+
+/* pannelli */
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:22px}
+.panel + .panel{margin-top:20px}
+.panel h2{font-size:26px; margin:0 0 10px}
+.panelhead{display:flex; gap:14px; align-items:center; margin-bottom:10px}
+.panelhead svg{width:56px; height:56px; flex:none}
+.panelhead h2{margin:0}
+.small{font-size:13px; color:var(--ink-soft)}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}}
+
+.budgetrow{display:grid; grid-template-columns:170px 1fr 110px; gap:10px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; font-weight:600}
+@media (max-width:560px){.budgetrow{grid-template-columns:1fr 90px}.budgetrow .track{grid-column:1/-1}}
+.track{height:12px; background:var(--surface-2); border-radius:8px; overflow:hidden}
+.track i{display:block; height:100%; background:linear-gradient(90deg,var(--mint),var(--sky))}
+.track i.over{background:linear-gradient(90deg,var(--sun),var(--rose))}
+.steps{list-style:none; margin:0; padding:0}
+.steps li{display:grid; grid-template-columns:28px 1fr auto; gap:10px; align-items:start; padding:11px 0; border-bottom:1px solid var(--line)}
+.steps li.late .when{color:var(--paid); font-weight:800}
+.steps li.done span.t{text-decoration:line-through; color:var(--ink-soft)}
+.steps .when{font-size:13px; color:var(--ink-soft); white-space:nowrap}
+.steps input{width:20px; height:20px; margin-top:2px; accent-color:var(--mint)}
+.drop{display:block; border:2px dashed var(--primary); border-radius:var(--r-md); padding:26px; text-align:center; background:var(--primary-soft); cursor:pointer}
+.drop.over{background:var(--sun-soft); border-color:var(--sun)}
+.thumbs{display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:8px; margin:14px 0}
+.thumbs img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r-sm); border:1px solid var(--line)}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{background:var(--primary-soft); color:var(--ink); border-radius:999px; padding:4px 11px; font-size:13px; font-weight:800}
+.swatches{display:flex; gap:6px; margin:8px 0}
+.swatches span{width:36px; height:36px; border-radius:50%; border:2px solid var(--surface); box-shadow:0 0 0 1px var(--line)}
+textarea.box{width:100%; font:inherit; color:var(--ink); background:var(--bg); border:1.5px solid var(--line); border-radius:var(--r-md); padding:11px 13px; min-height:110px}
+.ok{color:var(--mint); font-weight:800}
+.warn{color:var(--paid); font-weight:800}
+.row{display:flex; gap:8px; justify-content:flex-end; flex-wrap:wrap; margin-top:14px}
+
+/* dialog */
+dialog{border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); color:var(--ink); padding:24px; max-width:540px; width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(30,15,50,.45)}
+dialog h3{font-size:26px; margin:0 0 8px}
+dialog pre{white-space:pre-wrap; font-family:var(--sans); background:var(--bg); border:1px solid var(--line); border-radius:var(--r-sm); padding:12px; font-size:14px}
+
+/* ===== FORNITORI ===== */
+.vhead{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:28px 0 18px}
+.vhead .who{display:flex; align-items:center; gap:16px}
+.vhead .who svg{width:72px; height:72px; border-radius:22px; flex:none}
+.vhead h1{font-size:40px; margin:0; font-weight:800}
+.vhead p{margin:4px 0 0; color:var(--ink-soft)}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:6px}
+.stat{border-radius:var(--r-md); padding:12px; background:var(--sky-soft)}
+.stat:nth-child(2){background:var(--mint-soft)} .stat:nth-child(3){background:var(--sun-soft)}
+.stat b{display:block; font-family:var(--display); font-size:34px; line-height:1}
+.stat span{font-size:13px; color:var(--ink-soft)}
+.demo{font-size:12px; color:var(--ink-soft)}
+.funnel{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px}
+.funnel div{border-radius:var(--r-md); padding:14px; background:var(--primary-soft)}
+.funnel div:nth-child(2){background:var(--sky-soft)} .funnel div:nth-child(3){background:var(--mint-soft)} .funnel div:nth-child(4){background:var(--rose-soft)}
+.funnel b{display:block; font-family:var(--display); font-size:32px; line-height:1}
+.funnel span{font-size:13px; color:var(--ink-soft)}
+@media (max-width:560px){.funnel{grid-template-columns:repeat(2,1fr)}}
+.leadcard{border:1px solid var(--line); border-radius:var(--r-md); padding:16px; background:var(--surface); margin-bottom:12px}
+.leadcard header{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:flex-start}
+.leadcard h3{margin:0; font-size:17px}
+.leadcard select{font:inherit; font-size:14px; padding:7px 9px; border-radius:var(--r-sm); border:1.5px solid var(--line); background:var(--surface); color:var(--ink)}
+.score{display:inline-flex; align-items:baseline; gap:8px; font-weight:800}
+.score b{font-family:var(--display); font-size:32px; line-height:1; color:var(--primary)}
+.reasons{margin:8px 0; padding-left:18px; font-size:14px}
+.qa{margin-bottom:14px}
+.qa label{display:block; font-weight:800; margin-bottom:6px}
+.profile dl{display:grid; grid-template-columns:auto 1fr; gap:8px 14px; margin:0; font-size:14px}
+.profile dt{color:var(--ink-soft)}
+.profile dd{margin:0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:14px}
+th,td{text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-weight:800}
+.bar{height:10px; border-radius:6px; background:var(--primary)}
+.bar.them{background:var(--line)}
+
+/* ===== PORTALE ===== */
+.article{max-width:760px; margin:0 auto; padding:26px 0 64px}
+.crumbs{font-size:13px; color:var(--ink-soft); font-weight:700}
+.arthero{border-radius:var(--r-lg); overflow:hidden; margin:14px 0 18px}
+.arthero svg{display:block; width:100%; height:auto}
+.article h1{font-size:clamp(34px,5vw,52px); margin:6px 0 10px; font-weight:800}
+.updated{font-size:13px; color:var(--ink-soft); margin-bottom:22px}
+.answer{display:grid; grid-template-columns:44px 1fr; gap:12px; background:var(--primary-soft); padding:16px 18px; border-radius:var(--r-md); margin-bottom:26px}
+.answer svg{width:44px; height:44px}
+.answer p{margin:0 0 8px} .answer p:last-child{margin:0}
+.article h2{font-size:28px; margin:34px 0 10px}
+.article p{max-width:68ch}
+.partner{border:2px solid var(--paid); background:var(--paid-bg); border-radius:var(--r-md); padding:16px; margin:26px 0}
+.partner .paidtag{margin-bottom:8px}
+.ask{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:linear-gradient(110deg,var(--primary),var(--rose)); color:#fff; border-radius:var(--r-lg); padding:18px 20px; margin:30px 0}
+.ask .who{display:flex; align-items:center; gap:12px}
+.ask svg{width:52px; height:52px; flex:none}
+.ask p{margin:0; font-weight:800}
+.ask .btn{background:#fff; color:#2D1E3E}
+.criteria{list-style:none; padding:0}
+.criteria li{padding:10px 0; border-bottom:1px solid var(--line)}
+.faq dt{font-weight:800; margin-top:14px}
+.faq dd{margin:4px 0 0}
+.sources{font-size:13px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:14px; margin-top:34px}
+</style>
+</head>
+<body>
+<div class="devbar">
+  <nav class="tabs" aria-label="Viste dell’anteprima">
+    <a href="#sposi" data-v="sposi">Sposi</a>
+    <a href="#fornitori" data-v="fornitori">Fornitori</a>
+    <a href="#portale" data-v="portale">Portale GEO</a>
+  </nav>
+  <div class="note"><strong id="modeBadge">Avvio…</strong> · nome provvisorio · fornitori e numeri inventati · <button type="button" id="reset" class="btn ghost" style="padding:3px 10px;font-size:13px">Ricomincia da zero</button></div>
+</div>
+
+<!-- ============ SPOSI ============ -->
+<section class="view" id="v-sposi">
+  <div class="wrap">
+    <div class="hero">
+      <div class="mascot" data-gioia></div>
+      <div>
+        <p class="brand">Sposami.ai</p>
+        <h1>Ciao, sono Gioia. Organizziamo insieme il vostro matrimonio.</h1>
+        <p>Raccontatemi data, luogo e quante persone: io costruisco il piano, tengo d’occhio budget e scadenze e vi presento pochi fornitori adatti a voi, spiegandovi perché.</p>
+      </div>
+    </div>
+    <div class="stripe" id="stripe" aria-label="Da cosa partiamo">
+      <button type="button" class="tile t-lilac" data-ask="Da dove comincio? Siamo appena fidanzati."><span data-ill="anelli" data-seed="a1"></span>Da dove comincio?</button>
+      <button type="button" class="tile t-sun" data-ask="Aiutami a trovare la location giusta per noi."><span data-ill="location" data-seed="a2"></span>Trovare la location</button>
+      <button type="button" class="tile t-rose" data-ask="Che fotografo fa per noi?"><span data-ill="fotografo" data-seed="a3"></span>Scegliere il fotografo</button>
+      <button type="button" class="tile t-mint" data-ask="Quanto costa davvero un matrimonio nella nostra regione?"><span data-ill="budget" data-seed="a4"></span>Quanto costa davvero?</button>
+      <button type="button" class="tile t-sky" data-ask="Cosa dobbiamo fare questo mese per il nostro matrimonio?"><span data-ill="calendario" data-seed="a5"></span>Cosa fare questo mese</button>
+    </div>
+
+    <div class="subtabs" role="toolbar" aria-label="Sezioni del progetto" data-group="s">
+      <button type="button" data-p="s-chat" aria-pressed="true">Parla con Gioia</button>
+      <button type="button" data-p="s-piano" aria-pressed="false">Budget e scadenze</button>
+      <button type="button" data-p="s-stile" aria-pressed="false">Il vostro stile</button>
+      <button type="button" data-p="s-prev" aria-pressed="false">Preventivi</button>
+    </div>
+
+    <div class="app">
+      <div>
+        <!-- CHAT -->
+        <div class="pane on" id="s-chat">
+          <div class="chat">
+            <div class="chathead"><span data-gioia></span><div><b>Gioia</b><span><i class="online"></i>il vostro planner, sempre disponibile</span></div></div>
+            <div class="log" id="log" aria-live="polite"></div>
+            <div class="starters" id="starters">
+              <button type="button">Ci sposiamo il 18 settembre 2027 in Puglia, circa 120 invitati, budget 40.000 €, ci piacciono le masserie</button>
+              <button type="button">Budget 30.000 € in Toscana, 80 persone, vogliamo una cosa intima in un borgo a giugno 2027</button>
+              <button type="button">Siamo appena fidanzati e non sappiamo da dove cominciare</button>
+            </div>
+            <div class="quick" id="quick">
+              <button type="button" data-ask="Cosa manca al nostro piano?">Cosa manca al nostro piano?</button>
+              <button type="button" data-ask="Proponici una squadra di fornitori che lavorano bene insieme.">Una squadra di fornitori</button>
+              <button type="button" data-ask="Come dividiamo il budget?">Come dividiamo il budget?</button>
+            </div>
+            <form class="composer" id="composer">
+              <label for="input" style="position:absolute;left:-9999px">Scrivi un messaggio</label>
+              <textarea id="input" rows="1" placeholder="Scrivete a Gioia…"></textarea>
+              <button class="btn ghost" type="button" id="stop" hidden>Ferma</button>
+              <button class="btn" type="submit" id="send">Invia</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- PIANO -->
+        <div class="pane" id="s-piano">
+          <div class="panel">
+            <div class="panelhead"><span data-ill="budget" data-seed="p1"></span><h2>Ecco come dividerei il vostro budget</h2></div>
+            <p class="small" id="budgetNote" style="margin:0 0 10px"></p>
+            <div id="budgetRows"></div>
+          </div>
+          <div class="panel">
+            <div class="panelhead"><span data-ill="calendario" data-seed="p2"></span><h2>La vostra tabella di marcia</h2></div>
+            <p class="small" id="timelineNote" style="margin:0 0 6px"></p>
+            <ol class="steps" id="steps"></ol>
+          </div>
+        </div>
+
+        <!-- STILE -->
+        <div class="pane" id="s-stile">
+          <div class="panel">
+            <div class="panelhead"><span data-ill="stile" data-seed="p3"></span><h2>Mostratemi cosa vi piace</h2></div>
+            <p class="small" style="margin:0 0 14px">Caricate fino a 6 foto salvate da Pinterest o Instagram. Riconosco il vostro stile e lo uso per scegliere i fornitori adatti.</p>
+            <label class="drop" id="dropStile">
+              <input type="file" id="fileStile" accept="image/*" multiple hidden>
+              <strong>Scegliete le foto</strong> o trascinatele qui
+            </label>
+            <div class="thumbs" id="thumbsStile"></div>
+            <button class="btn" type="button" id="btnStile" disabled>Gioia, che stile è il nostro?</button>
+            <div id="outStile" style="margin-top:16px"></div>
+          </div>
+        </div>
+
+        <!-- PREVENTIVI -->
+        <div class="pane" id="s-prev">
+          <div class="panel">
+            <div class="panelhead"><span data-ill="preventivo" data-seed="p4"></span><h2>Fatemi leggere un preventivo</h2></div>
+            <p class="small" style="margin:0 0 14px">Caricate la foto di un preventivo o incollatene il testo. Vi dico cosa è incluso, cosa manca e cosa chiedere al fornitore all’appuntamento.</p>
+            <label class="drop" id="dropPrev">
+              <input type="file" id="filePrev" accept="image/*" hidden>
+              <strong>Foto del preventivo</strong>
+            </label>
+            <div class="thumbs" id="thumbsPrev"></div>
+            <textarea class="box" id="txtPrev" placeholder="…oppure incollate qui il testo del preventivo"></textarea>
+            <div class="row" style="justify-content:flex-start"><button class="btn" type="button" id="btnPrev">Leggilo tu, Gioia</button></div>
+            <div id="outPrev" style="margin-top:16px"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="brief" aria-label="Il vostro matrimonio">
+        <h2>Il vostro matrimonio</h2>
+        <p class="sub">Lo aggiorno io mentre parliamo. È quello che mando al fornitore quando chiedete un appuntamento.</p>
+        <div class="meter" id="meter"></div>
+        <dl id="brief"></dl>
+        <div class="chips" id="briefTags"></div>
+        <div class="how">I fornitori in evidenza pagano per avere più spazio e sono sempre segnalati. Non scavalcano i vostri filtri: zona, data libera, budget e ospiti. <a href="#portale">Come scegliamo i fornitori</a></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORNITORI ============ -->
+<section class="view" id="v-fornitori">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="who"><span data-ill="location" data-seed="L1"></span><div>
+        <h1>Masseria Lumen</h1>
+        <p>Area fornitore · location in Valle d’Itria · pacchetto Partner WR</p>
+      </div></div>
+      <span class="demo">Vista demo: qui compaiono tutte le richieste fatte nell’anteprima</span>
+    </div>
+
+    <div class="subtabs" role="toolbar" aria-label="Sezioni fornitore" data-group="f">
+      <button type="button" data-p="f-rich" aria-pressed="true">Richieste</button>
+      <button type="button" data-p="f-prof" aria-pressed="false">La tua scheda</button>
+      <button type="button" data-p="f-merc" aria-pressed="false">Il tuo mercato</button>
+    </div>
+
+    <div class="pane on" id="f-rich">
+      <div class="funnel" id="funnel"></div>
+      <div id="leadList"></div>
+    </div>
+
+    <div class="pane" id="f-prof">
+      <div class="grid2">
+        <div class="panel">
+          <h2>Intervista per la scheda</h2>
+          <p class="small" style="margin-top:0">Rispondi come parleresti a una coppia. L’AI trasforma le risposte in una scheda che l’assistente usa per abbinarti agli sposi giusti.</p>
+          <div id="qa"></div>
+          <button class="btn" type="button" id="btnProf">Crea la mia scheda</button>
+        </div>
+        <div class="panel profile">
+          <h2>Come ti vede l’assistente</h2>
+          <div id="profOut"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="f-merc">
+      <div class="grid2">
+        <div class="panel">
+          <h2>Cosa chiedono le coppie della tua zona</h2>
+          <div id="mercato"></div>
+        </div>
+        <div class="panel">
+          <h2>Perché a volte non ti consiglia</h2>
+          <p style="margin-top:0">Coppie in Valle d’Itria con 100–150 invitati nell’ultimo mese: la Masseria è stata consigliata nel 41% dei casi.</p>
+          <div class="tablewrap"><table>
+            <tr><th>Location</th><th>Consigliata</th><th style="width:40%"></th></tr>
+            <tr><td>Masseria Lumen</td><td>41%</td><td><div class="bar" style="width:41%"></div></td></tr>
+            <tr><td>Concorrente A</td><td>63%</td><td><div class="bar them" style="width:63%"></div></td></tr>
+            <tr><td>Concorrente B</td><td>29%</td><td><div class="bar them" style="width:29%"></div></td></tr>
+          </table></div>
+          <p>Motivo più frequente quando non vieni scelta: la scheda non dice per chi è pensata la masseria. Completa l’intervista nella scheda per migliorare l’abbinamento.</p>
+          <p class="demo">Numeri di esempio. Qui il report porta al Wedding Checkup: il limite è il posizionamento, non la visibilità.</p>
+          <h2 style="margin-top:22px">Pacchetti</h2>
+          <div class="tablewrap"><table>
+            <tr><th>Pacchetto</th><th>Cosa include</th></tr>
+            <tr><td>Presenza</td><td>Scheda verificata, consigli per merito, richieste con brief</td></tr>
+            <tr><td>Vetrina</td><td>Riquadro “In evidenza · a pagamento”, punteggio di compatibilità, bozze di risposta, dati della zona</td></tr>
+            <tr><td>Partner WR</td><td>Vetrina + scheda rivista dal team WR, report mensile, squadra di fornitori consigliati</td></tr>
+          </table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTALE ============ -->
+<section class="view" id="v-portale">
+  <div class="wrap">
+    <article class="article">
+      <div class="crumbs">Sposami.ai › Toscana › Fotografi</div>
+      <div class="arthero" id="artHero"></div>
+      <h1>Quanto costa un fotografo di matrimonio in Toscana?</h1>
+      <div class="updated">Aggiornato il 2 novembre 2026 · prezzi dichiarati da 3 fotografi verificati (dati di esempio)</div>
+      <div class="answer"><span data-gioia></span><div>
+        <p>Ve lo dico in breve: in Toscana un fotografo di matrimonio costa in genere tra <strong id="pmin">–</strong> e <strong id="pmax">–</strong> per il servizio completo, a seconda di ore di copertura, secondo fotografo e album.</p>
+        <p>Le fasce più alte riguardano lo stile reportage d’autore e le zone del Chianti e della Val d’Orcia, dove i matrimoni sono spesso su più giorni.</p>
+      </div></div>
+      <h2>Prezzi per fotografo</h2>
+      <div class="tablewrap"><table id="ptable"></table></div>
+      <h2>Cosa fa cambiare il prezzo?</h2>
+      <p>Tre voci spostano il preventivo più di tutte: le ore di copertura, il secondo fotografo e l’album stampato. Chiedete sempre un preventivo con queste tre voci separate: così confrontate servizi davvero simili.</p>
+      <div class="partner">
+        <span class="paidtag">Partner · contenuto a pagamento</span>
+        <p style="margin:0"><strong>Studio Fiorentino Immagini</strong> — fotografia classica tra Firenze e Chianti, da 2.200 €. Questo riquadro è a pagamento e non influisce sui prezzi e sui consigli dell’articolo.</p>
+      </div>
+      <h2>Quando prenotare il fotografo?</h2>
+      <p>Subito dopo la location: i fotografi lavorano su una sola data al giorno, e le date di sabato in alta stagione sono le prime a sparire.</p>
+      <div class="ask">
+        <div class="who"><span data-gioia></span><p>Avete già data e numero di ospiti? Ditemelo e vi dico io quali fotografi sono liberi.</p></div>
+        <a class="btn" href="#sposi" id="askLink">Chiedi a Gioia</a>
+      </div>
+      <h2 id="criteri">Come scegliamo i fornitori</h2>
+      <ol class="criteria">
+        <li><strong>Filtri che nessuno può comprare:</strong> zona servita, data libera, numero di ospiti, fascia di prezzo.</li>
+        <li><strong>Affinità con il vostro brief:</strong> stile, tipo di matrimonio, priorità che ci avete dato.</li>
+        <li><strong>Recensioni verificate:</strong> solo di coppie che si sono sposate davvero con quel fornitore.</li>
+        <li><strong>Posizioni a pagamento:</strong> i fornitori “In evidenza” pagano per più spazio, sono sempre etichettati e restano dentro gli stessi filtri.</li>
+      </ol>
+      <h2>Domande frequenti</h2>
+      <dl class="faq">
+        <dt>Il secondo fotografo serve davvero?</dt>
+        <dd>Sopra i 100 invitati o con preparativi in due luoghi diversi, sì: un solo fotografo non può essere in due posti.</dd>
+        <dt>L’album è compreso nel prezzo?</dt>
+        <dd>Dipende dal fotografo. Nella tabella il prezzo “da” di solito non lo include.</dd>
+      </dl>
+      <div class="sources">Fonte dei prezzi: listini dichiarati dai fornitori iscritti e verificati dalla redazione. In questa anteprima tutti i nomi e i numeri sono inventati.</div>
+    </article>
+  </div>
+</section>
+
+<dialog id="dlg">
+  <h3 id="dlgTitle"></h3>
+  <div id="dlgBody"></div>
+  <div class="row" id="dlgRow">
+    <button class="btn ghost" type="button" id="dlgClose">Chiudi</button>
+  </div>
+</dialog>
+
+<script>
+/* ===== CONFIGURAZIONE =====
+   Lasciare vuoto = modalità demo (funziona ovunque, senza AI)
+   oppure, dentro claude.ai, usa l'AI dell'account Claude.
+   Per l'AI indipendente: incollare qui l'indirizzo del vostro server, es.
+   const API_URL = "https://sposami-api.vostrodominio.workers.dev"; */
+const API_URL = "/api/claude";
+</script>
+<script>
+/* ====== DATI DI ESEMPIO (nomi inventati) ====== */
+const FORNITORI = [
+ {id:"L1",nome:"Masseria Lumen",categoria:"location",regione:"Puglia",zona:"Valle d’Itria (Ostuni)",da:110,a:160,unita:"a persona",min:60,max:180,stile:"rustico elegante, ulivi secolari, intimo, sala coperta",voto:4.9,recensioni:41,pagato:false,occupate:["2027-06-12","2027-09-11"],squadra:["F3","C1","M1"]},
+ {id:"L2",nome:"Masseria Torre Bianca",categoria:"location",regione:"Puglia",zona:"Salento (Lecce)",da:95,a:140,unita:"a persona",min:100,max:300,stile:"grande, scenografico, piscina, feste lunghe",voto:4.6,recensioni:88,pagato:true,occupate:["2027-09-18"],squadra:["F2","C2","M2"]},
+ {id:"L3",nome:"Villa dei Carrubi",categoria:"location",regione:"Puglia",zona:"Polignano a Mare",da:130,a:190,unita:"a persona",min:40,max:120,stile:"vista mare, intimo, elegante",voto:4.8,recensioni:27,pagato:false,occupate:[],squadra:["F1","C2"]},
+ {id:"L4",nome:"Tenuta Pietrafitta",categoria:"location",regione:"Puglia",zona:"Murgia",da:85,a:120,unita:"a persona",min:80,max:250,stile:"campagna, informale, conviviale",voto:4.5,recensioni:53,pagato:false,occupate:["2027-09-18"],squadra:["K1","M2"]},
+ {id:"K1",nome:"Cucina di Terra",categoria:"catering",regione:"Puglia",zona:"tutta la Puglia",da:75,a:110,unita:"a persona",stile:"cucina pugliese, chilometro zero, conviviale",voto:4.7,recensioni:39,pagato:false,occupate:[],squadra:["L4"]},
+ {id:"F1",nome:"Studio Ombre Chiare",categoria:"fotografo",regione:"Puglia",zona:"tutta la Puglia",da:2400,a:3800,unita:"a evento",stile:"reportage naturale, poco in posa",voto:4.9,recensioni:62,pagato:false,occupate:["2027-09-18"],squadra:["L3"]},
+ {id:"F2",nome:"Luce di Levante Foto",categoria:"fotografo",regione:"Puglia",zona:"Salento e Bari",da:1800,a:2900,unita:"a evento",stile:"classico, luminoso",voto:4.6,recensioni:45,pagato:true,occupate:[],squadra:["L2"]},
+ {id:"F3",nome:"Anna Corsi Fotografia",categoria:"fotografo",regione:"Puglia",zona:"Valle d’Itria",da:3200,a:4800,unita:"a evento",stile:"fine art, pellicola, intimo, elegante",voto:5.0,recensioni:19,pagato:false,occupate:[],squadra:["L1"]},
+ {id:"C1",nome:"Fiori di Calce",categoria:"fiori",regione:"Puglia",zona:"tutta la Puglia",da:1500,a:5000,unita:"a evento",stile:"mediterraneo, naturale, ulivo e limoni, rustico",voto:4.8,recensioni:33,pagato:false,occupate:[],squadra:["L1"]},
+ {id:"C2",nome:"Bottega Verdeulivo",categoria:"fiori",regione:"Puglia",zona:"Bari e Valle d’Itria",da:2500,a:7000,unita:"a evento",stile:"scenografico, installazioni",voto:4.7,recensioni:24,pagato:true,occupate:[],squadra:["L2","L3"]},
+ {id:"M1",nome:"Trio Scirocco",categoria:"musica",regione:"Puglia",zona:"tutta la Puglia",da:1200,a:2200,unita:"a evento",stile:"acustico, swing, pizzica",voto:4.9,recensioni:58,pagato:false,occupate:[],squadra:["L1"]},
+ {id:"M2",nome:"Dj Set Marea",categoria:"musica",regione:"Puglia",zona:"Salento e Bari",da:900,a:1600,unita:"a evento",stile:"dj, festa fino a tardi",voto:4.5,recensioni:31,pagato:false,occupate:[],squadra:["L2","L4"]},
+ {id:"P1",nome:"Sì Puglia Wedding Planner",categoria:"wedding planner",regione:"Puglia",zona:"tutta la Puglia",da:3000,a:8000,unita:"a evento",stile:"coordinamento completo, sposi da fuori regione",voto:4.8,recensioni:22,pagato:false,occupate:[],squadra:[]},
+ {id:"L5",nome:"Villa Poggio alle Ginestre",categoria:"location",regione:"Toscana",zona:"Chianti",da:140,a:220,unita:"a persona",min:50,max:200,stile:"eleganza classica, giardino all’italiana",voto:4.7,recensioni:66,pagato:true,occupate:["2027-06-19"],squadra:["F5","M3"]},
+ {id:"L6",nome:"Borgo San Leolino",categoria:"location",regione:"Toscana",zona:"Val d’Orcia",da:160,a:240,unita:"a persona",min:30,max:120,stile:"borgo intimo, pietra, esclusiva",voto:4.9,recensioni:29,pagato:false,occupate:[],squadra:["F4","C3"]},
+ {id:"L7",nome:"Tenuta La Fonte",categoria:"location",regione:"Toscana",zona:"Maremma",da:100,a:150,unita:"a persona",min:80,max:220,stile:"vigneto, informale, tramonto",voto:4.6,recensioni:41,pagato:false,occupate:[],squadra:["F6"]},
+ {id:"F4",nome:"Bianco Pellicola",categoria:"fotografo",regione:"Toscana",zona:"tutta la Toscana",da:2800,a:4200,unita:"a evento",stile:"documentaristico d’autore, intimo",voto:4.9,recensioni:37,pagato:false,occupate:[],squadra:["L6"]},
+ {id:"F5",nome:"Studio Fiorentino Immagini",categoria:"fotografo",regione:"Toscana",zona:"Firenze e Chianti",da:2200,a:3400,unita:"a evento",stile:"classico, ritratti curati",voto:4.6,recensioni:52,pagato:true,occupate:[],squadra:["L5"]},
+ {id:"F6",nome:"Lorenzo Vanni Photo",categoria:"fotografo",regione:"Toscana",zona:"Toscana del sud",da:1900,a:2800,unita:"a evento",stile:"naturale, luce morbida",voto:4.8,recensioni:26,pagato:false,occupate:[],squadra:["L7"]},
+ {id:"C3",nome:"Atelier Rosmarino",categoria:"fiori",regione:"Toscana",zona:"tutta la Toscana",da:2000,a:6000,unita:"a evento",stile:"campestre, erbe aromatiche, naturale",voto:4.8,recensioni:30,pagato:false,occupate:[],squadra:["L6"]},
+ {id:"M3",nome:"Quartetto Arno",categoria:"musica",regione:"Toscana",zona:"tutta la Toscana",da:1400,a:2400,unita:"a evento",stile:"archi, cerimonia e aperitivo, elegante",voto:4.9,recensioni:44,pagato:false,occupate:[],squadra:["L5"]},
+ {id:"P2",nome:"Cipresso Wedding Design",categoria:"wedding planner",regione:"Toscana",zona:"tutta la Toscana",da:4000,a:10000,unita:"a evento",stile:"design ed eventi su più giorni",voto:4.7,recensioni:18,pagato:false,occupate:[],squadra:[]},
+ {id:"L8",nome:"Baglio Zagara",categoria:"location",regione:"Sicilia",zona:"Trapani",da:105,a:150,unita:"a persona",min:60,max:200,stile:"baglio storico, agrumeto, mare vicino",voto:4.7,recensioni:35,pagato:false,occupate:[],squadra:["F7"]},
+ {id:"F7",nome:"Sale e Luce Foto",categoria:"fotografo",regione:"Sicilia",zona:"Sicilia occidentale",da:2000,a:3200,unita:"a evento",stile:"reportage, colori caldi",voto:4.8,recensioni:28,pagato:false,occupate:[],squadra:["L8"]}
+];
+const byId = Object.fromEntries(FORNITORI.map(f=>[f.id,f]));
+const BASE_L1_STILE = byId.L1.stile;
+const eur = n => Math.round(n).toLocaleString("it-IT") + " €";
+const prezzo = f => f.unita==="a persona" ? `${f.da}–${f.a} € a persona` : `${eur(f.da)}–${eur(f.a)}`;
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+/* ====== STATO SALVATO ====== */
+const KEY="sposami-anteprima-v2";
+const FRESH = () => ({brief:{}, tags:[], palette:[], turns:[], done:{}, leads:[], profilo:null, risposte:{}});
+let state = FRESH();
+try{ const raw=localStorage.getItem(KEY); if(raw) state=Object.assign(FRESH(), JSON.parse(raw)); }catch(e){}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+function applyProfilo(){ byId.L1.stile = state.profilo?.parole_stile?.length ? state.profilo.parole_stile.join(", ") : BASE_L1_STILE; }
+applyProfilo();
+
+/* ====== AI: tre modalità ======
+   1) "server": AI indipendente sul vostro server (imposta API_URL in cima al file)
+   2) "claude": dentro claude.ai, usa l'account Claude di chi apre la pagina
+   3) "demo":   ovunque, senza AI: risposte costruite dalla pagina sui dati del catalogo */
+let AI_MODE=null, realSample=null, samplePromise=null;
+const MODE_LABEL={server:"AI attiva (server Sposami)", claude:"AI attiva (account Claude)", demo:"Modalità demo: risposte simulate, senza AI"};
+async function detectMode(){
+  if(AI_MODE) return AI_MODE;
+  if(typeof API_URL==="string" && API_URL) AI_MODE="server";
+  else { realSample = window.claude?.use ? await claude.use("sample").catch(()=>null) : null; AI_MODE = realSample ? "claude" : "demo"; }
+  const el=document.getElementById("modeBadge"); if(el) el.textContent=MODE_LABEL[AI_MODE];
+  return AI_MODE;
+}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function typeOut(text,onText,signal){
+  if(!onText) return;
+  const words=text.split(/(\s+)/); let acc="";
+  for(let i=0;i<words.length;i+=6){ if(signal?.aborted) throw {code:"cancelled",text:acc}; acc+=words.slice(i,i+6).join(""); onText({text:acc}); await sleep(35); }
+}
+function parseJsonLoose(t){
+  try{ return JSON.parse(t); }catch(e){}
+  const f=t.match(/```(?:json)?\s*([\s\S]*?)```/); if(f){ try{ return JSON.parse(f[1]); }catch(e){} }
+  const a=t.indexOf("{"), b=t.lastIndexOf("}"); if(a>=0&&b>a){ try{ return JSON.parse(t.slice(a,b+1)); }catch(e){} }
+  throw {code:"invalid_json", text:t};
+}
+async function fileToBlock(f){
+  /* ridimensiona a max 1568 px e comprime in JPEG: richieste leggere e veloci */
+  const url=URL.createObjectURL(f);
+  try{
+    const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=()=>rej({code:"image_rejected"}); i.src=url; });
+    const k=Math.min(1, 1568/Math.max(img.naturalWidth,img.naturalHeight));
+    const c=document.createElement("canvas"); c.width=Math.round(img.naturalWidth*k); c.height=Math.round(img.naturalHeight*k);
+    c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+    return {type:"image", source:{type:"base64", media_type:"image/jpeg", data:c.toDataURL("image/jpeg",0.85).split(",")[1]}};
+  } finally { URL.revokeObjectURL(url); }
+}
+async function serverCall(body, signal){
+  const r=await fetch(API_URL,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body),signal}).catch(e=>{ throw {code: signal?.aborted?"cancelled":"upstream_error"}; });
+  if(r.status===429) throw {code:"rate_limited"};
+  if(!r.ok) throw {code:"upstream_error"};
+  return r.json();
+}
+const textOf = resp => (resp.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n").trim();
+async function serverText(input, opts={}){
+  const content = opts.images?.length ? [...await Promise.all([...opts.images].map(fileToBlock)), {type:"text", text:String(input)}] : String(input);
+  const resp=await serverCall({tier:opts.modelTier||"default", messages:[{role:"user",content}]}, opts.signal);
+  const t=textOf(resp); await typeOut(t, opts.onText, opts.signal); return {text:t};
+}
+async function serverChat(turns, opts){
+  const system=turns[0].content; let msgs=turns.slice(1).map(t=>({role:t.role,content:t.content}));
+  while(msgs.length && msgs[0].role!=="user") msgs.shift();
+  const tools=opts.tools.map(t=>({name:t.name, description:t.description, input_schema:t.inputSchema||{type:"object",properties:{}}}));
+  let full="";
+  for(let round=0; round<5; round++){
+    const resp=await serverCall({tier:opts.modelTier||"quick", system, messages:msgs, tools}, opts.signal);
+    const t=textOf(resp); if(t){ full=(full?full+"\n\n":"")+t; opts.onText?.({text:full}); }
+    if(resp.stop_reason!=="tool_use") break;
+    msgs.push({role:"assistant", content:resp.content});
+    const results=[];
+    for(const b of resp.content.filter(b=>b.type==="tool_use")){
+      const tool=opts.tools.find(x=>x.name===b.name); let out;
+      try{ out=await tool.execute(b.input||{}, {signal:opts.signal}); }catch(e){ out="Error: "+(e?.message||e); }
+      results.push({type:"tool_result", tool_use_id:b.id, content: typeof out==="string"?out:JSON.stringify(out)});
+    }
+    msgs.push({role:"user", content:results});
+  }
+  if(!full) throw {code:"empty_completion"};
+  return {text:full};
+}
+function stripDemo(o){ const {demo, ...rest}=o||{}; return rest; }
+async function runDemo(opts, input, asJson){
+  await sleep(500);
+  const out = await (opts?.demo ? opts.demo(input) : (asJson?{}:"Funzione disponibile con l’AI attiva."));
+  if(!asJson){ await typeOut(String(out), opts?.onText, opts?.signal); return {text:String(out)}; }
+  return out;
+}
+async function aiCall(input, opts, asJson){
+  const mode=await detectMode();
+  if(mode==="server"){
+    if(opts?.tools) return serverChat(input, opts);
+    const r=await serverText(input, opts); return asJson ? parseJsonLoose(r.text) : r;
+  }
+  if(mode==="claude"){
+    try{ return asJson ? await realSample.json(input, stripDemo(opts)) : await realSample(input, stripDemo(opts)); }
+    catch(e){ if(["not_granted","sampling_disabled","capability_disabled","tools_unavailable","images_unavailable"].includes(e?.code) && !e?.text){ AI_MODE="demo"; const el=document.getElementById("modeBadge"); if(el) el.textContent=MODE_LABEL.demo; return runDemo(opts,input,asJson); } throw e; }
+  }
+  return runDemo(opts, input, asJson);
+}
+const AI = Object.assign((input,opts)=>aiCall(input,opts,false), {
+  json:(input,opts)=>aiCall(input,opts,true),
+  limits: async()=>{ const m=await detectMode(); if(m==="claude") return realSample.limits().catch(()=>({})); return {images:{maxCount:6}, tools:{maxCount:8}}; }
+});
+function getSample(){ if(!samplePromise) samplePromise=detectMode().then(()=>AI); return samplePromise; }
+function errMsg(e){
+  return ({cancelled:"Interrotto.", not_granted:"L’accesso all’AI non è stato consentito per questa pagina.", rate_limited:"Troppe richieste ravvicinate: riprovate tra poco.", tools_unavailable:"Questa vista non supporta gli strumenti dell’assistente.", sampling_disabled:"L’AI non è disponibile per questo account.", images_unavailable:"Questa vista non può inviare immagini: usate il testo.", image_rejected:"Immagine non valida: provate con un’altra foto (JPG o PNG).", invalid_json:"Risposta non leggibile: riprovate.", refused:"Richiesta non elaborabile: riformulatela.", empty_completion:"Nessuna risposta: riformulate la domanda."})[e?.code] || "La risposta non è arrivata. Riprovate.";
+}
+const NO_AI = "Funzione non disponibile in questo momento.";
+const DEMO_NOTE = "\n\n(Modalità demo: risposta simulata dalla pagina, senza AI.)";
+
+/* ====== MOTORE DEMO DELLA CHAT ====== */
+const MESI={gennaio:1,febbraio:2,marzo:3,aprile:4,maggio:5,giugno:6,luglio:7,agosto:8,settembre:9,ottobre:10,novembre:11,dicembre:12};
+const STILI=["masseria","masserie","rustico","intimo","elegante","mare","borgo","scenografico","informale","naturale","ulivi","vigneto","classico","minimal","campagna","giardino","pietra"];
+const CATS=[["fotograf","fotografo"],["fior","fiori"],["allestim","fiori"],["music","musica"],["dj","musica"],["band","musica"],["catering","catering"],["planner","wedding planner"],["location","location"],["masseri","location"],["villa","location"]];
+function demoParse(t){
+  const s=t.toLowerCase(), out={};
+  const reg=s.match(/\b(puglia|toscana|sicilia)\b/); if(reg) out.regione=reg[1][0].toUpperCase()+reg[1].slice(1);
+  const osp=s.match(/(\d{2,3})\s*(invitati|ospiti|persone)/); if(osp) out.ospiti="circa "+osp[1];
+  const bud=s.match(/(\d{1,3}(?:[.\s]\d{3})+|\d+\s*(?:k|mila))\s*(?:€|euro)?/);
+  if(bud && /budget|€|euro|mila|\dk/.test(s)){ let n=bud[1].replace(/[.\s]/g,""); if(/k|mila/.test(n)) n=String(parseInt(n)*1000); out.budget=Number(n).toLocaleString("it-IT")+" €"; }
+  const d=s.match(/(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(20\d\d)/);
+  const m=s.match(/(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(20\d\d)/);
+  if(d){ out.data=`${d[1]} ${d[2]} ${d[3]}`; out.data_iso=`${d[3]}-${String(MESI[d[2]]).padStart(2,"0")}-${d[1].padStart(2,"0")}`; }
+  else if(m){ out.data=`${m[1]} ${m[2]}`; out.data_iso=`${m[2]}-${String(MESI[m[1]]).padStart(2,"0")}`; }
+  const st=STILI.filter(w=>s.includes(w)).map(w=>w==="masserie"?"masseria":w); if(st.length) out.stile=[...new Set(st)].join(", ");
+  if(/religios|chiesa/.test(s)) out.rito="religioso"; else if(/civile|comune/.test(s)) out.rito="civile";
+  return out;
+}
+function demoChat(turns){
+  const last=[...turns].reverse().find(t=>t.role==="user")?.content||"";
+  const found=demoParse(last);
+  if(Object.keys(found).length) TOOLS[0].execute(found);
+  const b=state.brief, low=last.toLowerCase();
+  let cat=(CATS.find(([k])=>low.includes(k))||[])[1];
+  const parts=[];
+  if(Object.keys(found).length) parts.push("Perfetto, ho salvato tutto nel vostro progetto.");
+  if(!b.regione){
+    parts.push(/fidanzat|cominciare|iniziare|da dove/.test(low)
+      ? "Si parte da tre decisioni, in quest’ordine: periodo, regione e numero di ospiti. Da lì dipendono location, budget e tutte le scadenze."
+      : "Per consigliarvi bene mi serve sapere in quale regione vi sposate.");
+    parts.push("In che regione immaginate il matrimonio, e più o meno quante persone?");
+    return parts.join("\n\n")+DEMO_NOTE;
+  }
+  if(!cat) cat="location";
+  if(cat==="location" && !b.ospiti){ parts.push("Quante persone pensate di invitare, più o meno? Mi serve per proporvi solo location della capienza giusta."); return parts.join("\n\n")+DEMO_NOTE; }
+  const res=TOOLS[1].execute({categoria:cat, regione:b.regione, ospiti:num(b.ospiti)||undefined, data_iso:b.data_iso});
+  const top=(res.risultati||[]).slice(0,3);
+  if(!top.length){ parts.push(`In ${b.regione} non ho ancora fornitori di questa categoria compatibili con il vostro brief. Nella versione completa il catalogo copre tutte le regioni.`); }
+  else{
+    parts.push(`Secondo me ${top.length===1?"questo è il fornitore più adatto":"questi sono i "+top.length+" più adatti"} a voi per la categoria ${cat}:`);
+    parts.push(top.map(r=>`- [[${r.id}]]: ${r.motivi?.[0]||"in linea con il vostro brief"}${r.in_evidenza_a_pagamento?" (in evidenza a pagamento)":""}${r.limiti?.length?". Attenzione: "+r.limiti[0]:""}.`).join("\n"));
+    if(res.gia_occupati_quella_data?.length) parts.push(`Già occupati nella vostra data: ${res.gia_occupati_quella_data.join(", ")}.`);
+    const team=byId[top[0].id]?.squadra?.map(x=>byId[x]?.nome).filter(Boolean)||[];
+    if(team.length) parts.push(`${top[0].nome} lavora spesso con ${team.join(", ")}: una squadra già affiatata.`);
+  }
+  const next = !b.data ? "Avete già una data, anche indicativa?" : !b.budget ? "Che budget totale avete in mente? Così lo divido per voce nella sezione Budget e scadenze." : cat==="location" ? "Volete che passiamo al fotografo?" : "Su quale altra categoria vi aiuto?";
+  parts.push(next);
+  return parts.join("\n\n")+DEMO_NOTE;
+}
+
+/* ====== ILLUSTRAZIONI (SVG originali, nessuna immagine esterna) ====== */
+function gioiaSVG(){
+  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gioia">
+  <circle cx="60" cy="60" r="58" fill="#ECE6FF"/>
+  <path d="M22 62c0-24 17-40 38-40s38 16 38 40v30H22z" fill="#5A3E2B"/>
+  <circle cx="60" cy="64" r="28" fill="#FFD9C2"/>
+  <path d="M32 58c4-18 18-26 30-24 12 2 22 10 26 22-10-6-22-8-30-14-6 8-16 13-26 16z" fill="#5A3E2B"/>
+  <circle cx="50" cy="66" r="3.2" fill="#2D1E3E"/><circle cx="70" cy="66" r="3.2" fill="#2D1E3E"/>
+  <circle cx="44" cy="74" r="4.5" fill="#FF6F91" opacity=".45"/><circle cx="76" cy="74" r="4.5" fill="#FF6F91" opacity=".45"/>
+  <path d="M51 77q9 8 18 0" stroke="#2D1E3E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g transform="translate(60 31)">
+    <circle cx="-22" cy="6" r="6" fill="#FFB238"/><circle cx="-22" cy="6" r="2.4" fill="#fff"/>
+    <circle cx="-8" cy="0" r="7" fill="#FF6F91"/><circle cx="-8" cy="0" r="2.6" fill="#fff"/>
+    <circle cx="8" cy="0" r="7" fill="#6C4BD8"/><circle cx="8" cy="0" r="2.6" fill="#fff"/>
+    <circle cx="22" cy="6" r="6" fill="#3FBF8F"/><circle cx="22" cy="6" r="2.4" fill="#fff"/>
+  </g>
+  <path d="M30 104c6-12 18-16 30-16s24 4 30 16" fill="#6C4BD8"/>
+</svg>`;
+}
+const PALETTES=[["#6C4BD8","#FF6F91"],["#3FBF8F","#4BA3F2"],["#FFB238","#FF6F91"],["#4BA3F2","#6C4BD8"],["#FF6F91","#FFB238"],["#3FBF8F","#FFB238"]];
+function hashStr(s){ let h=0; for(const c of String(s)) h=(h*31+c.charCodeAt(0))|0; return Math.abs(h); }
+const ICONS={
+  location:`<path d="M-26 22V-2a26 26 0 0 1 52 0v24" fill="none" stroke="#fff" stroke-width="5"/><path d="M-34 24h68" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="0" cy="-6" r="5" fill="#fff"/>`,
+  fotografo:`<rect x="-28" y="-14" width="56" height="36" rx="8" fill="none" stroke="#fff" stroke-width="5"/><circle cx="0" cy="4" r="11" fill="none" stroke="#fff" stroke-width="5"/><path d="M-10-14l5-9h10l5 9" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>`,
+  fiori:`<circle cx="0" cy="-12" r="8" fill="#fff"/><circle cx="-13" cy="-4" r="8" fill="#fff" opacity=".85"/><circle cx="13" cy="-4" r="8" fill="#fff" opacity=".85"/><path d="M0-2v28M0 14l-10-8M0 14l10-8" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`,
+  musica:`<path d="M-10 18V-18l26-6v34" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><circle cx="-16" cy="18" r="7" fill="#fff"/><circle cx="10" cy="10" r="7" fill="#fff"/>`,
+  catering:`<circle cx="0" cy="4" r="20" fill="none" stroke="#fff" stroke-width="5"/><circle cx="0" cy="4" r="9" fill="#fff" opacity=".6"/><path d="M-34-14v36M34-14v12a6 6 0 0 1-6 6v18" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>`,
+  "wedding planner":`<rect x="-22" y="-22" width="44" height="50" rx="6" fill="none" stroke="#fff" stroke-width="5"/><path d="M-12-6h24M-12 6h24M-12 18h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M-8-26h16" stroke="#fff" stroke-width="6" stroke-linecap="round"/>`,
+  budget:`<circle cx="0" cy="2" r="24" fill="none" stroke="#fff" stroke-width="5"/><path d="M8-8a12 12 0 1 0 0 20M-14 0h16M-14 6h16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+  calendario:`<rect x="-24" y="-18" width="48" height="42" rx="7" fill="none" stroke="#fff" stroke-width="5"/><path d="M-24-4h48M-12-26v12M12-26v12" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="8" cy="12" r="5" fill="#fff"/>`,
+  stile:`<path d="M-20 20l20-44 20 44z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><circle cx="16" cy="-14" r="7" fill="#fff"/><circle cx="-18" cy="-10" r="5" fill="#fff" opacity=".8"/>`,
+  preventivo:`<path d="M-20-26h28l12 12v40h-40z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><path d="M-10-4h20M-10 8h20M-10 18h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`,
+  anelli:`<circle cx="-10" cy="4" r="16" fill="none" stroke="#fff" stroke-width="5"/><circle cx="12" cy="4" r="16" fill="none" stroke="#fff" stroke-width="5"/><path d="M-14-18l4-8 4 8" fill="#fff"/>`
+};
+function sceneSVG(kind, seed, w=320, h=120){
+  const [a,b]=PALETTES[hashStr(seed||kind)%PALETTES.length], id="g"+hashStr(kind+seed+w);
+  const icon=ICONS[kind]||ICONS.anelli;
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+  <rect width="${w}" height="${h}" fill="url(#${id})"/>
+  <circle cx="${w*0.12}" cy="${h*0.9}" r="${h*0.55}" fill="#fff" opacity=".12"/>
+  <circle cx="${w*0.92}" cy="${h*0.08}" r="${h*0.45}" fill="#fff" opacity=".14"/>
+  <circle cx="${w*0.78}" cy="${h*0.82}" r="${h*0.18}" fill="#fff" opacity=".18"/>
+  <g transform="translate(${w/2} ${h/2}) scale(${Math.min(w,h)/110})">${icon}</g>
+</svg>`;
+}
+function iconTile(kind, seed){ return sceneSVG(kind, seed, 60, 60); }
+function hillsSVG(){
+  return `<svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE3EA"/><stop offset="1" stop-color="#FFF1D6"/></linearGradient></defs>
+  <rect width="760" height="240" fill="url(#sky)"/>
+  <circle cx="600" cy="70" r="38" fill="#FFB238"/>
+  <path d="M0 170q120-70 250-20t260-10 250 10v90H0z" fill="#9FD9B8"/>
+  <path d="M0 200q160-50 330 0t430-20v60H0z" fill="#3FBF8F"/>
+  <g fill="#2E7D5B"><path d="M150 168l7-50 7 50z"/><path d="M175 172l6-40 6 40z"/><path d="M470 160l7-52 7 52z"/></g>
+  <path d="M120 200q20-6 40 0" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/>
+  <g transform="translate(380 120)"><rect x="-46" y="-28" width="92" height="60" rx="12" fill="#6C4BD8"/><circle cx="0" cy="2" r="19" fill="#fff"/><circle cx="0" cy="2" r="11" fill="#2D1E3E"/><rect x="-18" y="-40" width="36" height="14" rx="5" fill="#6C4BD8"/><circle cx="32" cy="-16" r="5" fill="#FFB238"/></g>
+</svg>`;
+}
+function ringSVG(pct){
+  const r=26, c=2*Math.PI*r, off=c*(1-pct/100);
+  return `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="${r}" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="8"/><circle cx="32" cy="32" r="${r}" fill="none" stroke="#6C4BD8" stroke-width="8" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 32 32)"/><text x="32" y="37" text-anchor="middle" font-size="15" font-weight="800" fill="#2D1E3E" font-family="Nunito Sans, sans-serif">${pct}%</text></svg>`;
+}
+function fillIllustrations(){
+  document.querySelectorAll("[data-gioia]").forEach(el=>el.innerHTML=gioiaSVG());
+  document.querySelectorAll("[data-ill]").forEach(el=>el.innerHTML=iconTile(el.dataset.ill, el.dataset.seed||el.dataset.ill));
+  const hero=document.getElementById("artHero"); if(hero) hero.innerHTML=hillsSVG();
+  document.documentElement.style.setProperty("--gioia-avatar", `url("data:image/svg+xml;utf8,${encodeURIComponent(gioiaSVG())}")`);
+}
+function renderMeter(){
+  const el=document.getElementById("meter"); if(!el) return;
+  const core=["data","regione","ospiti","budget","stile","rito","priorita"];
+  const filled=core.filter(k=>state.brief[k]).length;
+  const steps=Object.values(state.done||{}).filter(Boolean).length;
+  const pct=Math.round(filled/core.length*70 + Math.min(steps,11)/11*30);
+  let days="";
+  const iso=state.brief.data_iso||""; const m=iso.match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/);
+  if(m){ const d=new Date(+m[1], +m[2]-1, +(m[3]||15)); const n=Math.ceil((d-new Date())/86400000); if(n>0) days = m[3] ? `Mancano ${n} giorni al vostro sì` : `Mancano circa ${Math.round(n/30)} mesi`; }
+  el.innerHTML = ringSVG(pct) + `<div><b>${pct<15?"Iniziamo insieme":pct<60?"Il progetto prende forma":"Siete a buon punto"}</b><span>${esc(days || "Raccontatemi la data e preparo il conto alla rovescia")}</span></div>`;
+}
+
+/* ====== ROUTING ====== */
+const VIEWS=["sposi","fornitori","portale"];
+function show(){
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "sposi";
+  VIEWS.forEach(n=>document.getElementById("v-"+n).classList.toggle("on", n===v));
+  document.querySelectorAll(".tabs a").forEach(a=>{ if(a.dataset.v===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  if(v==="fornitori"){ renderLeads(); renderMercato(); renderProfilo(); }
+  window.scrollTo(0,0);
+}
+addEventListener("hashchange", show);
+document.querySelectorAll(".subtabs").forEach(g=>{
+  g.addEventListener("click",ev=>{
+    const b=ev.target.closest("button[data-p]"); if(!b) return;
+    g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b?"true":"false"));
+    g.querySelectorAll("button").forEach(x=>document.getElementById(x.dataset.p).classList.toggle("on", x===b));
+    if(b.dataset.p==="s-piano") renderPiano();
+  });
+});
+function openPane(group, id){ const b=document.querySelector(`.subtabs[data-group="${group}"] button[data-p="${id}"]`); b?.click(); }
+
+/* ====== BRIEF ====== */
+const CAMPI = [["data","Data"],["regione","Regione"],["zona","Zona"],["ospiti","Ospiti"],["budget","Budget"],["stile","Stile"],["rito","Rito"],["priorita","Priorità"],["scelti","Già scelto"]];
+function renderBrief(fresh=[]){
+  const dl=document.getElementById("brief"); dl.innerHTML="";
+  for(const [k,label] of CAMPI){
+    const dt=document.createElement("dt"); dt.textContent=label;
+    const dd=document.createElement("dd");
+    if(state.brief[k]){ dd.textContent=state.brief[k]; if(fresh.includes(k)) dd.classList.add("fresh"); } else { dd.textContent="—"; dd.classList.add("empty"); }
+    dl.append(dt,dd);
+  }
+  document.getElementById("briefTags").innerHTML = state.tags.map(t=>`<span class="chip">${esc(t)}</span>`).join("");
+  renderMeter();
+}
+function briefLines(){ return CAMPI.filter(([k])=>state.brief[k]).map(([k,l])=>`${l}: ${state.brief[k]}`).concat(state.tags.length?["Parole di stile dalle foto: "+state.tags.join(", ")]:[]); }
+const num = s => { const m=String(s||"").replace(/\./g,"").match(/\d+/); return m?Number(m[0]):0; };
+
+/* ====== COMPATIBILITÀ ====== */
+function compat(f, b, tags=[]){
+  let score=40; const plus=[], minus=[];
+  const osp=num(b.ospiti), bud=num(b.budget), iso=b.data_iso||"";
+  if(b.regione && f.regione.toLowerCase()===String(b.regione).toLowerCase()){ score+=10; } else if(b.regione){ score-=25; minus.push("regione diversa"); }
+  if(f.min!=null && osp){ if(osp>=f.min && osp<=f.max){ score+=15; plus.push(`${osp} ospiti nella capienza (${f.min}–${f.max})`);} else { score-=20; minus.push(`${osp} ospiti fuori capienza`);} }
+  if(bud && osp && f.unita==="a persona"){ const pp=bud*0.45/osp; if(f.da<=pp){ score+=12; plus.push(`budget compatibile (circa ${Math.round(pp)} € a persona per location e cena)`);} else { score-=10; minus.push(`budget stretto: servono almeno ${f.da} € a persona`);} }
+  if(bud && f.unita==="a evento"){ const share={fotografo:.12,fiori:.10,musica:.06,"wedding planner":.08,catering:.3}[f.categoria]||.1; if(f.da<=bud*share*1.15){ score+=10; plus.push("rientra nella quota di budget della categoria"); } else { minus.push("sopra la quota di budget della categoria"); } }
+  const words=(String(b.stile||"")+" "+tags.join(" ")).toLowerCase().split(/[^a-zàèéìòù]+/).filter(w=>w.length>3);
+  const hits=[...new Set(words.filter(w=>f.stile.toLowerCase().includes(w)))];
+  if(hits.length){ score+=Math.min(20,hits.length*7); plus.push("stile in comune: "+hits.slice(0,3).join(", ")); }
+  if(/^\d{4}-\d{2}-\d{2}$/.test(iso)){ if(f.occupate?.includes(iso)){ score-=40; minus.push("data già occupata"); } else { score+=8; plus.push("data libera"); } }
+  return {score:Math.max(3,Math.min(98,Math.round(score))), plus, minus};
+}
+
+/* ====== STRUMENTI PER L’AI ====== */
+const TOOLS = [
+ { name:"aggiorna_brief",
+   description:"Salva nel progetto degli sposi le informazioni nuove sul matrimonio (compaiono nel riquadro e alimentano budget e scadenze). Chiamalo ogni volta che scopri un dato nuovo. Restituisce il brief aggiornato.",
+   inputSchema:{type:"object",properties:{
+     data:{type:"string",description:"Come la dicono gli sposi, es. 18 settembre 2027"},
+     data_iso:{type:"string",description:"YYYY-MM-DD se il giorno è noto, altrimenti YYYY-MM"},
+     regione:{type:"string"},zona:{type:"string"},ospiti:{type:"string"},budget:{type:"string",description:"Budget totale, es. 40.000 €"},
+     stile:{type:"string"},rito:{type:"string"},priorita:{type:"string"},scelti:{type:"string",description:"Fornitori già scelti"}}},
+   execute(input){
+     const fresh=[];
+     for(const k of [...CAMPI.map(c=>c[0]),"data_iso"]){ if(input[k]!=null && String(input[k]).trim()){ state.brief[k]=String(input[k]).slice(0,140); fresh.push(k);} }
+     save(); renderBrief(fresh); return state.brief;
+   }},
+ { name:"cerca_fornitori",
+   description:"Cerca nel catalogo i fornitori compatibili. Applica filtri duri (categoria, regione, ospiti per le location, prezzo massimo, data libera) e restituisce i compatibili ordinati per compatibilità con il brief, con il campo in_evidenza_a_pagamento e la squadra con cui lavorano spesso. Unica fonte ammessa per nomi, prezzi e disponibilità.",
+   inputSchema:{type:"object",properties:{
+     categoria:{type:"string",enum:["location","catering","fotografo","fiori","musica","wedding planner"]},
+     regione:{type:"string",description:"Puglia, Toscana o Sicilia"},
+     ospiti:{type:"number"},
+     prezzo_massimo:{type:"number",description:"Location e catering: euro a persona. Altri: euro a evento."},
+     data_iso:{type:"string",description:"YYYY-MM-DD per escludere chi è già occupato"}},
+     required:["categoria","regione"]},
+   execute(input){
+     setStatus("Cerco i fornitori compatibili e liberi…");
+     const cat=String(input.categoria||"").toLowerCase(), reg=String(input.regione||"").toLowerCase();
+     const osp=Number(input.ospiti)||0, max=Number(input.prezzo_massimo)||0, iso=String(input.data_iso||state.brief.data_iso||"");
+     const occupati=[];
+     let r=FORNITORI.filter(f=>f.categoria===cat && f.regione.toLowerCase()===reg)
+       .filter(f=>!osp || f.min==null || (osp>=f.min && osp<=f.max))
+       .filter(f=>!max || f.da<=max)
+       .filter(f=>{ if(/^\d{4}-\d{2}-\d{2}$/.test(iso) && f.occupate?.includes(iso)){ occupati.push(f.nome); return false;} return true; })
+       .map(f=>({f, c:compat(f, state.brief, state.tags)}))
+       .sort((a,b)=>b.c.score-a.c.score || b.f.voto-a.f.voto).slice(0,6)
+       .map(({f,c})=>({id:f.id,nome:f.nome,zona:f.zona,prezzo:prezzo(f),capienza:f.min!=null?`${f.min}–${f.max} ospiti`:undefined,stile:f.stile,compatibilita:c.score,motivi:c.plus,limiti:c.minus,recensioni_verificate:`${f.voto} su 5 (${f.recensioni})`,in_evidenza_a_pagamento:f.pagato,lavora_spesso_con:(f.squadra||[]).map(id=>byId[id]?.nome).filter(Boolean)}));
+     return {risultati:r, gia_occupati_quella_data:occupati, nota:r.length?undefined:"Nessun fornitore compatibile nel catalogo con questi filtri. Regioni coperte: Puglia, Toscana, Sicilia."};
+   }}
+];
+
+const RULES = `Sei Gioia, l'assistente di Sposami.ai che aiuta una coppia italiana a organizzare il proprio matrimonio. Parli sempre in prima persona ("vi consiglio", "ho salvato", "secondo me"), in italiano, dando del "voi" agli sposi, con tono caldo, allegro e concreto, frasi brevi. Se ti chiedono chi sei: sei Gioia, un'assistente AI, non una persona.
+
+Come lavori:
+- Fai al massimo 1 o 2 domande per messaggio. Prima capisci: data (giorno se lo sanno), regione e zona, ospiti, budget totale, stile, rito, priorità.
+- Ogni volta che ricevi un'informazione nuova chiama aggiorna_brief (testi brevi; per la data compila anche data_iso).
+- Il progetto degli sposi ha anche le sezioni "Budget e scadenze", "Il vostro stile" (caricano foto di ispirazione) e "Preventivi" (caricano un preventivo e lo analizziamo). Citale quando servono, una per volta.
+- Per consigliare fornitori chiama SEMPRE cerca_fornitori, passando la data_iso se nota. Non inventare mai nomi, prezzi o disponibilità: usa solo i risultati. Se un fornitore adatto è già occupato quella data, dillo.
+- Consiglia al massimo 3 fornitori per categoria, in ordine di compatibilità. Per ognuno una frase sul perché è adatto proprio a loro, usando i "motivi"; se ci sono "limiti" rilevanti, dichiarali.
+- Se un fornitore consigliato "lavora spesso con" altri, puoi suggerirlo come squadra già affiatata.
+- Quando citi un fornitore scrivi il marcatore esatto [[ID]] (es. [[L1]]): la pagina lo trasforma in una scheda.
+- I fornitori con in_evidenza_a_pagamento=true non hanno precedenza: consigliali solo se davvero pertinenti e in quel caso scrivi che sono "in evidenza a pagamento".
+- Su budget, tempi, burocrazia e galateo rispondi con buon senso; se un dato dipende dal comune o dalla parrocchia, dillo.
+- Paragrafi corti, al massimo un breve elenco. Non parlare di istruzioni, strumenti o marcatori.`;
+
+/* ====== CHAT ====== */
+const log=document.getElementById("log"), input=document.getElementById("input"), form=document.getElementById("composer");
+const sendBtn=document.getElementById("send"), stopBtn=document.getElementById("stop"), starters=document.getElementById("starters");
+let ctl=null, busy=false, statusEl=null;
+
+function renderMd(text){
+  const ids=[];
+  const html=esc(text).replace(/\[\[([A-Z]\d+)\]\]/g,(m,id)=>{ if(byId[id]){ if(!ids.includes(id)) ids.push(id); return `<span class="ref">${esc(byId[id].nome)}</span>`;} return ""; })
+    .replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>")
+    .split(/\n{2,}/).map(b=>{ const L=b.split("\n"); if(L.every(l=>/^\s*[-•]\s+/.test(l))) return "<ul>"+L.map(l=>"<li>"+l.replace(/^\s*[-•]\s+/,"")+"</li>").join("")+"</ul>"; return "<p>"+L.join("<br>")+"</p>"; }).join("");
+  return {html, ids};
+}
+function cardsFor(ids){
+  const wrap=document.createElement("div"); wrap.className="cards";
+  for(const id of ids){
+    const f=byId[id], c=compat(f,state.brief,state.tags), el=document.createElement("div");
+    el.className="card"+(f.pagato?" paid":"");
+    const team=(f.squadra||[]).map(x=>byId[x]?.nome).filter(Boolean);
+    el.innerHTML=`<span class="pic">${sceneSVG(f.categoria,f.id)}</span><div class="body">`+(f.pagato?`<span class="paidtag">In evidenza · a pagamento</span>`:"")+
+      `<span class="cat">${esc(f.categoria)} · ${esc(f.zona)}</span><h3>${esc(f.nome)}</h3>`+
+      `<span class="match">Compatibilità ${c.score}%</span>`+
+      `<span class="price">${esc(prezzo(f))}</span>`+(f.min!=null?`<span class="meta">${f.min}–${f.max} ospiti</span>`:"")+
+      `<span class="meta">${f.voto} su 5 · ${f.recensioni} recensioni verificate</span>`+
+      (team.length?`<span class="team">Lavora spesso con: ${esc(team.join(", "))}</span>`:"")+`</div>`;
+    const row=document.createElement("div"); row.className="cardrow";
+    const b1=document.createElement("button"); b1.className="btn"; b1.type="button"; b1.textContent="Chiedi un appuntamento"; b1.onclick=()=>requestAppointment(f);
+    const b2=document.createElement("button"); b2.className="btn ghost"; b2.type="button"; b2.textContent="Cosa gli chiedo?"; b2.onclick=()=>prepQuestions(f);
+    row.append(b1,b2); el.querySelector(".body").append(row); wrap.append(el);
+  }
+  return wrap;
+}
+function addMsg(role,text){
+  const m=document.createElement("div"); m.className="msg "+role;
+  if(role==="u") m.textContent=text; else m.innerHTML=`<div class="txt"></div>`;
+  log.append(m); log.scrollTop=log.scrollHeight; return m;
+}
+function setStatus(t){ if(statusEl) statusEl.textContent=t; }
+function renderChat(){
+  log.innerHTML="";
+  const h=addMsg("a"); h.querySelector(".txt").innerHTML="<p>Ciao, sono Gioia, e congratulazioni! 💍</p><p>Raccontatemi il matrimonio che avete in mente: quando, dove, più o meno quante persone. Io tengo tutto in ordine qui a destra, e potete tornare quando volete.</p>";
+  for(const t of state.turns){
+    if(t.role==="user") addMsg("u",t.content);
+    else { const m=addMsg("a"); const r=renderMd(t.content); m.querySelector(".txt").innerHTML=r.html; if(r.ids.length) m.append(cardsFor(r.ids)); }
+  }
+  starters.hidden = state.turns.length>0;
+}
+async function send(text){
+  text=text.trim(); if(!text||busy) return;
+  starters.hidden=true; addMsg("u",text); state.turns.push({role:"user",content:text}); save();
+  const m=addMsg("a"), txt=m.querySelector(".txt");
+  statusEl=document.createElement("div"); statusEl.className="status"; statusEl.textContent="Sto pensando…"; m.append(statusEl);
+  const s=await getSample();
+  if(!s){ statusEl.remove(); statusEl=null; txt.innerHTML=`<p class="err">${NO_AI}</p>`; state.turns.pop(); save(); return; }
+  busy=true; sendBtn.disabled=true; stopBtn.hidden=false; ctl=new AbortController();
+  const ctx = `Stato attuale del progetto (può essere vuoto):\n${briefLines().join("\n")||"nessun dato"}`;
+  try{
+    const res=await s([{role:"user",content:RULES+"\n\n"+ctx}, ...state.turns.slice(-16)], {
+      modelTier:"quick", tools:TOOLS, signal:ctl.signal, demo:()=>demoChat(state.turns),
+      onText:({text})=>{ if(statusEl){statusEl.remove(); statusEl=null;} txt.innerHTML=renderMd(text).html; log.scrollTop=log.scrollHeight; }
+    });
+    const r=renderMd(res.text); txt.innerHTML=r.html; if(r.ids.length) m.append(cardsFor(r.ids));
+    state.turns.push({role:"assistant",content:res.text}); save();
+  }catch(e){
+    if(statusEl){statusEl.remove(); statusEl=null;}
+    if(e?.text){ txt.innerHTML=renderMd(e.text).html; state.turns.push({role:"assistant",content:e.text}); }
+    const p=document.createElement("p"); p.className="err"; p.textContent=errMsg(e); m.append(p);
+    if(!e?.text && e?.code!=="cancelled") state.turns.pop();
+    save();
+  }finally{ busy=false; sendBtn.disabled=false; stopBtn.hidden=true; statusEl=null; log.scrollTop=log.scrollHeight; }
+}
+form.addEventListener("submit",ev=>{ev.preventDefault(); const t=input.value; input.value=""; send(t);});
+input.addEventListener("keydown",ev=>{ if(ev.key==="Enter"&&!ev.shiftKey){ev.preventDefault(); form.requestSubmit();} });
+stopBtn.onclick=()=>ctl?.abort();
+starters.querySelectorAll("button").forEach(b=>b.onclick=()=>send(b.textContent));
+
+/* ====== DIALOG ====== */
+const dlg=document.getElementById("dlg");
+function openDialog(title, html, extra){
+  document.getElementById("dlgTitle").textContent=title;
+  document.getElementById("dlgBody").innerHTML=html;
+  const row=document.getElementById("dlgRow"); row.querySelectorAll(".extra").forEach(x=>x.remove());
+  if(extra){ extra.classList.add("extra"); row.append(extra); }
+  dlg.showModal();
+}
+document.getElementById("dlgClose").onclick=()=>dlg.close();
+
+function requestAppointment(f){
+  const c=compat(f,state.brief,state.tags);
+  const lead={id:"r"+Date.now(), fornitoreId:f.id, brief:{...state.brief}, tags:[...state.tags], quando:new Date().toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}), stato:"nuova", bozza:""};
+  state.leads.unshift(lead); save();
+  const lines=briefLines();
+  const go=document.createElement("button"); go.className="btn"; go.type="button"; go.textContent="Guarda come lo riceve il fornitore";
+  go.onclick=()=>{ dlg.close(); location.hash="#fornitori"; openPane("f","f-rich"); };
+  openDialog("Richiesta inviata a "+f.nome,
+    `<p style="margin:0 0 8px">Al posto della solita “richiesta di preventivo”, il fornitore riceve il vostro brief e la compatibilità (${c.score}%):</p><pre>${esc(lines.join("\n")||"Brief ancora vuoto: raccontate qualcosa all’assistente.")}</pre>`, go);
+}
+
+async function prepQuestions(f){
+  openDialog("Cosa chiedere a "+f.nome, `<p class="status">Preparo le domande…</p>`);
+  const s=await getSample(); const body=document.getElementById("dlgBody");
+  if(!s){ body.innerHTML=`<p class="err">${NO_AI}</p>`; return; }
+  try{
+    const out=await s(`Sei un wedding planner esperto. Prepara per una coppia 6 domande da fare all'appuntamento con questo fornitore, specifiche per il loro matrimonio. Domande brevi, una per riga, iniziando con "- ". Niente introduzione.\n\nFornitore: ${f.nome}, ${f.categoria}, ${f.zona}, ${prezzo(f)}, stile: ${f.stile}.\nMatrimonio della coppia:\n${briefLines().join("\n")||"dati non ancora indicati"}`,
+      {modelTier:"quick", cache:false, demo:()=>demoQuestions(f), onText:({text})=>{ body.innerHTML=renderMd(text).html; }});
+    body.innerHTML=renderMd(out.text).html;
+  }catch(e){ body.innerHTML=`<p class="err">${errMsg(e)}</p>`; }
+}
+
+/* ====== BUDGET E SCADENZE ====== */
+const QUOTE=[["Location e ricevimento",.45,"location"],["Foto e video",.12,"fotografo"],["Fiori e allestimenti",.10,"fiori"],["Abiti e accessori",.10,null],["Wedding planner",.08,"wedding planner"],["Musica",.06,"musica"],["Partecipazioni, bomboniere, auto e altro",.09,null]];
+function renderPiano(){
+  const bud=num(state.brief.budget), osp=num(state.brief.ospiti), reg=state.brief.regione;
+  const note=document.getElementById("budgetNote"), rows=document.getElementById("budgetRows"); rows.innerHTML="";
+  if(!bud){ note.textContent="Indicate un budget totale all’assistente e qui lo dividiamo per voce, confrontandolo con i prezzi reali della vostra regione."; }
+  else note.textContent=`Budget ${eur(bud)}${osp?` per ${osp} ospiti`:""}${reg?` in ${reg}`:""}. Quote indicative; la barra mostra quanto costa il fornitore meno caro del catalogo rispetto alla quota.`;
+  for(const [label,q,cat] of QUOTE){
+    const quota=bud*q;
+    let min=0;
+    if(cat && reg){ const fs=FORNITORI.filter(f=>f.categoria===cat && f.regione.toLowerCase()===String(reg).toLowerCase()); if(fs.length){ const f=fs.sort((a,b)=>a.da-b.da)[0]; min = f.unita==="a persona" ? f.da*(osp||0) : f.da; } }
+    const pct = quota&&min ? Math.min(100,Math.round(min/quota*100)) : 0;
+    const r=document.createElement("div"); r.className="budgetrow";
+    r.innerHTML=`<span>${esc(label)}</span><div class="track"><i class="${min>quota?"over":""}" style="width:${pct}%"></i></div><strong>${bud?eur(quota):Math.round(q*100)+"%"}</strong>`;
+    if(min && bud) r.title = `Fornitore meno caro in catalogo: ${eur(min)}`;
+    rows.append(r);
+    if(min && bud && min>quota){ const w=document.createElement("div"); w.className="small warn"; w.style.padding="0 0 6px"; w.textContent=`Attenzione: in ${reg} il minimo in catalogo per questa voce è ${eur(min)}.`; rows.append(w); }
+  }
+  renderSteps();
+}
+const STEPS=[["location","Scegliere location e data",13],["planner","Decidere se affidarsi a un wedding planner",12],["foto","Prenotare fotografo e videomaker",11],["rito","Prenotare chiesa o comune e verificare i documenti",10],["musica","Prenotare musica e catering (se non incluso)",9],["abiti","Scegliere gli abiti",8],["fiori","Scegliere fiori e allestimenti",7],["inviti","Inviare le partecipazioni",5],["menu","Prova menu e degustazione",3],["pubblicazioni","Pubblicazioni di matrimonio in comune",2],["tableau","Tableau, tavoli e scaletta della giornata",1]];
+function renderSteps(){
+  const ol=document.getElementById("steps"); ol.innerHTML="";
+  const iso=state.brief.data_iso||""; const m=iso.match(/^(\d{4})-(\d{2})/);
+  const wedding = m ? new Date(Number(m[1]), Number(m[2])-1, Number((iso.split("-")[2])||15)) : null;
+  const today=new Date();
+  document.getElementById("timelineNote").textContent = wedding ? `Calcolato sulla vostra data: ${state.brief.data||iso}. Spuntate le cose fatte.` : "Indicate la data all’assistente e calcoliamo le scadenze. Intanto, l’ordine consigliato:";
+  for(const [k,t,mesi] of STEPS){
+    const li=document.createElement("li"); const done=!!state.done[k];
+    let when=`${mesi} mesi prima`, late=false;
+    if(wedding){ const d=new Date(wedding); d.setMonth(d.getMonth()-mesi); when="entro "+d.toLocaleDateString("it-IT",{month:"long",year:"numeric"}); late = !done && d<today; if(late) when="in ritardo: era "+when.replace("entro ",""); }
+    li.className=(done?"done ":"")+(late?"late":"");
+    li.innerHTML=`<input type="checkbox" ${done?"checked":""} aria-label="${esc(t)}"><span class="t">${esc(t)}</span><span class="when">${esc(when)}</span>`;
+    li.querySelector("input").onchange=e=>{ state.done[k]=e.target.checked; save(); renderSteps(); renderMeter(); };
+    ol.append(li);
+  }
+}
+
+/* ====== STILE DALLE FOTO ====== */
+let stileFiles=[];
+function setupDrop(dropId, inputId, onFiles){
+  const d=document.getElementById(dropId), i=document.getElementById(inputId);
+  i.onchange=()=>onFiles([...i.files]);
+  d.addEventListener("dragover",e=>{e.preventDefault(); d.classList.add("over");});
+  d.addEventListener("dragleave",()=>d.classList.remove("over"));
+  d.addEventListener("drop",e=>{e.preventDefault(); d.classList.remove("over"); onFiles([...e.dataTransfer.files].filter(f=>f.type.startsWith("image/")));});
+}
+function thumbs(id, files){ document.getElementById(id).innerHTML=""; for(const f of files){ const img=document.createElement("img"); img.alt=""; img.src=URL.createObjectURL(f); document.getElementById(id).append(img);} }
+setupDrop("dropStile","fileStile",files=>{ stileFiles=files.slice(0,6); thumbs("thumbsStile",stileFiles); document.getElementById("btnStile").disabled=!stileFiles.length; });
+document.getElementById("btnStile").onclick=async()=>{
+  const out=document.getElementById("outStile"); out.innerHTML=`<p class="status">Guardo le vostre foto…</p>`;
+  const s=await getSample(); if(!s){ out.innerHTML=`<p class="err">${NO_AI}</p>`; return; }
+  const lim=await s.limits().catch(()=>null);
+  if(!lim?.images){ out.innerHTML=`<p class="err">Questa vista non può inviare immagini all’AI.</p>`; return; }
+  try{
+    const r=await s.json(`Queste sono foto di ispirazione che una coppia ha salvato per il proprio matrimonio. Rispondi solo con un oggetto JSON:
+{"descrizione":"2 frasi in italiano, dando del voi, che descrivono lo stile che emerge","parole_stile":["5-7 parole o brevi espressioni in italiano utili a cercare fornitori, es. rustico, intimo, mediterraneo, minimal, scenografico, elegante, naturale"],"palette":["4 colori in esadecimale"],"consiglio":"1 frase su cosa chiedere ai fornitori per ottenere questo stile"}`,
+      {images:stileFiles.slice(0, lim.images.maxCount), modelTier:"default", demo:demoStile});
+    state.tags=(r.parole_stile||[]).map(String).slice(0,7); state.palette=(r.palette||[]).map(String).filter(c=>/^#[0-9a-f]{3,8}$/i.test(c)).slice(0,5);
+    save(); renderBrief();
+    out.innerHTML=`<p>${esc(r.descrizione||"")}</p><div class="chips">${state.tags.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>`+
+      (state.palette.length?`<div class="swatches">${state.palette.map(c=>`<span style="background:${c}" title="${c}"></span>`).join("")}</div>`:"")+
+      (r.consiglio?`<p class="small">${esc(r.consiglio)}</p>`:"")+`<p class="ok">Salvato nel progetto: da ora l’assistente usa queste parole per scegliere i fornitori.</p>`;
+  }catch(e){ out.innerHTML=`<p class="err">${errMsg(e)}</p>`; }
+};
+
+/* ====== PREVENTIVI ====== */
+let prevFile=null;
+setupDrop("dropPrev","filePrev",files=>{ prevFile=files[0]||null; thumbs("thumbsPrev",prevFile?[prevFile]:[]); });
+document.getElementById("btnPrev").onclick=async()=>{
+  const out=document.getElementById("outPrev"), txt=document.getElementById("txtPrev").value.trim();
+  if(!prevFile && !txt){ out.innerHTML=`<p class="err">Caricate una foto o incollate il testo del preventivo.</p>`; return; }
+  out.innerHTML=`<p class="status">Leggo il preventivo…</p>`;
+  const s=await getSample(); if(!s){ out.innerHTML=`<p class="err">${NO_AI}</p>`; return; }
+  let images;
+  if(prevFile){ const lim=await s.limits().catch(()=>null); if(lim?.images) images=[prevFile]; else if(!txt){ out.innerHTML=`<p class="err">Questa vista non può inviare immagini: incollate il testo.</p>`; return; } }
+  try{
+    const r=await s.json(`Analizza questo preventivo di un fornitore di matrimonio per conto degli sposi. Sii equilibrato: non spingere a scegliere il prezzo più basso, aiuta a capire cosa si sta comprando.
+Matrimonio della coppia: ${briefLines().join("; ")||"dati non indicati"}.
+${txt?"Testo del preventivo:\n"+txt.slice(0,8000):"Il preventivo è nell'immagine."}
+Rispondi solo con JSON:
+{"fornitore":"nome o tipo","totale":"importo totale come scritto, o null","voci":[{"voce":"...","importo":"... o null","nota":"breve"}],"non_chiaro_o_mancante":["voci che spesso servono e non sono indicate"],"domande":["4 domande da fare al fornitore"],"sintesi":"2 frasi in italiano dando del voi"}`,
+      {images, modelTier:"default", demo:()=>demoPreventivo(txt)});
+    out.innerHTML=`<h3 style="font-family:var(--serif);font-weight:400;font-size:24px;margin:0 0 6px">${esc(r.fornitore||"Preventivo")} ${r.totale?"· "+esc(r.totale):""}</h3><p>${esc(r.sintesi||"")}</p>`+
+      `<div class="tablewrap"><table><tr><th>Voce</th><th>Importo</th><th>Nota</th></tr>${(r.voci||[]).map(v=>`<tr><td>${esc(v.voce)}</td><td>${esc(v.importo??"—")}</td><td>${esc(v.nota??"")}</td></tr>`).join("")}</table></div>`+
+      ((r.non_chiaro_o_mancante||[]).length?`<h4>Non chiaro o mancante</h4><ul>${r.non_chiaro_o_mancante.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:"")+
+      ((r.domande||[]).length?`<h4>Da chiedere all’appuntamento</h4><ul>${r.domande.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:"");
+  }catch(e){ out.innerHTML=`<p class="err">${errMsg(e)}</p>`; }
+};
+
+
+/* ====== RISPOSTE DEMO DELLE ALTRE FUNZIONI ====== */
+function demoQuestions(f){
+  const b=state.brief, q={
+    location:["Cosa succede se piove: avete una sala coperta per tutti gli ospiti?","Fino a che ora si può fare musica?","Il menu è fisso o si può personalizzare? Quante degustazioni sono incluse?","Ci sono camere per gli sposi e per gli ospiti da fuori?","Ci sono altri matrimoni lo stesso giorno?","Cosa è incluso nel prezzo a persona e cosa si paga a parte?"],
+    fotografo:["Quante ore di copertura sono incluse?","Il secondo fotografo è compreso?","In quanto tempo consegnate le foto e in che formato?","L’album è incluso o a parte?","Avete già lavorato nella nostra location?","Possiamo vedere un matrimonio completo, non solo le foto migliori?"],
+  }[f.categoria]||["Cosa è incluso nel prezzo e cosa no?","Avete già lavorato con la nostra location?","Come gestite imprevisti e cambi di programma?","Quando serve confermare e con quale acconto?","Chi sarà presente il giorno del matrimonio?","Possiamo vedere un lavoro completo simile al nostro?"];
+  const extra = b.ospiti ? [`Siamo ${b.ospiti} ospiti: ci sono costi o limiti legati al numero?`] : [];
+  return [...q.slice(0,5),...extra].map(x=>"- "+x).join("\n")+DEMO_NOTE;
+}
+function demoStile(){
+  return {descrizione:"Dalle vostre foto emerge uno stile naturale e mediterraneo: luce calda, tavole lunghe all’aperto, verde e fiori di campo più che composizioni costruite. (Modalità demo: analisi d’esempio, le foto non vengono lette.)",
+    parole_stile:["naturale","mediterraneo","intimo","ulivi","rustico"], palette:["#E8DCC8","#8A9A5B","#C7A27C","#F4F1EC"],
+    consiglio:"Chiedete ai fornitori foto di matrimoni all’aperto con luce di fine giornata, non solo allestimenti in sala."};
+}
+function demoPreventivo(txt){
+  const voci=[]; let totale=null;
+  for(const line of (txt||"").split(/\n/)){ const m=line.match(/^(.*?)[\s:–-]+(?:€\s*)?(\d[\d.,]*)\s*(?:€|euro)?\s*$/i); if(m && m[1].trim()){ if(/totale/i.test(m[1])) totale=m[2]+" €"; else voci.push({voce:m[1].trim(), importo:m[2]+" €", nota:""}); } }
+  if(!voci.length) voci.push({voce:"Servizio fotografico 8 ore",importo:"2.400 €",nota:"esempio"},{voce:"Album 30x30",importo:"450 €",nota:"esempio"},{voce:"Secondo fotografo",importo:"non indicato",nota:"da chiedere"});
+  return {fornitore:"Preventivo analizzato", totale, voci,
+    non_chiaro_o_mancante:["Ore di copertura esatte e costo dell’ora extra","Trasferta e pernottamento","Tempi di consegna e formato dei file"],
+    domande:["Cosa succede se la festa dura più del previsto?","Il prezzo include l’IVA?","Quando va versato l’acconto e quanto?","Cosa è previsto in caso di annullamento?"],
+    sintesi:"Le voci principali sono chiare; mancano alcuni dettagli che spesso cambiano il prezzo finale. Chiedeteli prima di confrontarlo con altri preventivi. (Modalità demo: analisi semplificata.)"};
+}
+function demoBozza(l,f,c){
+  const b=l.brief;
+  const det=[b.data&&`il ${b.data}`, b.ospiti&&`${b.ospiti} ospiti`, b.stile&&`uno stile ${b.stile}`, b.priorita&&`l’attenzione a ${b.priorita}`].filter(Boolean).slice(0,2).join(" e ");
+  const limite=c.minus.find(x=>/occupata/.test(x));
+  return `Ciao! Grazie per averci scritto${det?": abbiamo letto che pensate a "+det:""}.\n\n`+
+    (limite?`Vi diciamo subito una cosa importante: quella data per noi è già occupata. Se avete un minimo di flessibilità, abbiamo ancora libere alcune date vicine e ve le mostriamo volentieri.\n\n`:`Il vostro è proprio il tipo di matrimonio per cui siamo pensati, e ci piacerebbe farvi vedere dal vivo come potrebbe essere.\n\n`)+
+    `Vi va un sopralluogo sabato mattina, oppure una videochiamata di 20 minuti in settimana, la sera? Diteci quale preferite e fissiamo.\n\n${f.nome}`+DEMO_NOTE;
+}
+function demoProfilo(filled){
+  const all=filled.map(([k])=>state.risposte[k]).join(" ").toLowerCase();
+  const kws=["intimo","rustico","elegante","ulivi","mare","informale","naturale","scenografico","pietra","giardino","cena all’aperto","piccoli matrimoni"].filter(w=>all.includes(w.split(" ")[0]));
+  const chi=(state.risposte.chi||"").split(/[.!?]/)[0];
+  return {frase:`Aiutiamo ${chi?chi.toLowerCase():"coppie che cercano un matrimonio raccolto tra gli ulivi"} a vivere la festa come a casa di amici, in modo che ricordino ogni ospite, non solo l’allestimento.`,
+    per_chi: chi||"Coppie che cercano un matrimonio raccolto e naturale.",
+    non_per:(state.risposte.non||"").split(/[.!?]/)[0]||"Matrimoni molto grandi o formali.",
+    punti_forti:(state.risposte.diverso||"Ulivi secolari; sala coperta; cucina del territorio").split(/[.;\n]/).map(x=>x.trim()).filter(Boolean).slice(0,3),
+    parole_stile: kws.length?kws:["intimo","rustico","ulivi","naturale"],
+    da_migliorare:["Indicare una fascia di prezzo chiara per tipo di matrimonio","Raccontare un matrimonio reale come esempio","(Modalità demo: scheda costruita dalla pagina, senza AI.)"]};
+}
+
+/* ====== FORNITORI: RICHIESTE ====== */
+const STATI=[["nuova","Nuova"],["appuntamento","Appuntamento fissato"],["contratto","Contratto firmato"],["persa","Persa"]];
+const SEED={id:"seed", fornitoreId:"L1", quando:"esempio", stato:"nuova", bozza:"", tags:["ulivi","intimo","naturale"],
+  brief:{data:"11 settembre 2027", data_iso:"2027-09-11", regione:"Puglia", zona:"Valle d’Itria", ospiti:"circa 120", budget:"35.000 €", stile:"elegante ma non formale, tanto verde", priorita:"cena all’aperto, sala coperta in caso di pioggia"}};
+function leadsAll(){ return state.leads.length ? state.leads : [SEED]; }
+function renderLeads(){
+  const L=leadsAll(), n=k=>L.filter(l=>l.stato===k).length;
+  const tot=L.length, app=n("appuntamento")+n("contratto"), con=n("contratto");
+  document.getElementById("funnel").innerHTML=
+    `<div><b>${tot}</b><span>richieste</span></div><div><b>${app}</b><span>appuntamenti (${tot?Math.round(app/tot*100):0}%)</span></div><div><b>${con}</b><span>contratti (${app?Math.round(con/app*100):0}% degli appuntamenti)</span></div><div><b>${n("persa")}</b><span>perse</span></div>`;
+  const box=document.getElementById("leadList"); box.innerHTML="";
+  if(!state.leads.length){ const p=document.createElement("p"); p.className="demo"; p.textContent="Richiesta di esempio. Chiedete un appuntamento dall’assistente e compariranno qui le vostre."; box.append(p); }
+  for(const l of L){
+    const f=byId[l.fornitoreId]||byId.L1, c=compat(f,l.brief,l.tags||[]);
+    const lines=CAMPI.filter(([k])=>l.brief[k]).map(([k,lab])=>`<li>${esc(lab)}: ${esc(l.brief[k])}</li>`).join("") + ((l.tags||[]).length?`<li>Stile dalle foto: ${esc(l.tags.join(", "))}</li>`:"");
+    const card=document.createElement("div"); card.className="leadcard";
+    let review="";
+    if(l.stato==="contratto" && l.brief.data_iso){ review=`<p class="small">Richiesta di recensione verificata programmata per il giorno dopo il matrimonio (${esc(l.brief.data||l.brief.data_iso)}).</p>`; }
+    card.innerHTML=`<header><div><h3>Per ${esc(f.nome)} · ${esc(l.quando)}</h3><div class="score"><b>${c.score}%</b> compatibilità</div></div>
+      <select aria-label="Stato della richiesta">${STATI.map(([k,t])=>`<option value="${k}" ${l.stato===k?"selected":""}>${t}</option>`).join("")}</select></header>
+      <ul class="reasons">${c.plus.map(x=>`<li class="ok" style="font-weight:500">${esc(x)}</li>`).join("")}${c.minus.map(x=>`<li class="warn" style="font-weight:500">${esc(x)}</li>`).join("")}</ul>
+      <details><summary>Brief completo</summary><ul class="reasons">${lines||"<li>Brief vuoto</li>"}</ul></details>${review}
+      <div class="row" style="justify-content:flex-start"><button class="btn" type="button">${l.bozza?"Rigenera la bozza":"Scrivi la bozza di risposta"}</button></div>
+      <textarea class="box" ${l.bozza?"":"hidden"} aria-label="Bozza di risposta">${esc(l.bozza)}</textarea>`;
+    card.querySelector("select").onchange=e=>{ if(l.id==="seed"){ state.leads.push(l); } l.stato=e.target.value; save(); renderLeads(); };
+    const ta=card.querySelector("textarea");
+    ta.oninput=()=>{ l.bozza=ta.value; if(l.id!=="seed") save(); };
+    card.querySelector(".row .btn").onclick=e=>draftReply(l,f,c,ta,e.target);
+    box.append(card);
+  }
+}
+async function draftReply(l,f,c,ta,btn){
+  ta.hidden=false; ta.value="Scrivo la bozza…"; btn.disabled=true;
+  const s=await getSample(); if(!s){ ta.value=NO_AI; btn.disabled=false; return; }
+  const prof=state.profilo;
+  try{
+    const out=await s(`Scrivi in italiano la risposta di ${f.nome} (${f.categoria}, ${f.zona}) a una coppia che ha chiesto un appuntamento tramite il portale. Obiettivo: fissare l'appuntamento, non mandare il listino.
+Regole: dai del voi; cita 2 dettagli del loro brief per far capire che li hai letti; spiega in 1-2 frasi perché il loro matrimonio è adatto a voi; non scrivere prezzi né sconti; proponi 2 possibili momenti per un appuntamento (sopralluogo o videochiamata) e chiudi con una domanda semplice; massimo 140 parole; firma con il nome del fornitore. Solo il testo del messaggio.
+Brief della coppia:\n${CAMPI.filter(([k])=>l.brief[k]).map(([k,lab])=>lab+": "+l.brief[k]).join("\n")}
+Punti di forza del fornitore: ${prof?.punti_forti?.join("; ")||f.stile}. Per chi è pensato: ${prof?.per_chi||"non indicato"}.
+Compatibilità calcolata: ${c.score}% (${c.plus.join("; ")}${c.minus.length?"; limiti: "+c.minus.join("; "):""}). Se c'è un limite importante (es. data occupata), dillo con onestà e proponi un'alternativa.`,
+      {modelTier:"default", cache:false, demo:()=>demoBozza(l,f,c), onText:({text})=>{ ta.value=text; }});
+    ta.value=out.text; l.bozza=out.text; if(l.id==="seed") state.leads.push(l); save();
+  }catch(e){ ta.value=e?.text||errMsg(e); }
+  finally{ btn.disabled=false; btn.textContent="Rigenera la bozza"; }
+}
+
+/* ====== FORNITORI: SCHEDA ====== */
+const DOMANDE=[["chi","Per quali sposi è pensata la tua masseria? Descrivi la coppia ideale."],["non","Quali sposi non sono adatti a voi?"],["diverso","Cosa vi rende diversi dalle altre location della zona?"],["giornata","Raccontaci come si svolge una giornata tipo da voi."],["numeri","Capienza, periodi migliori, cosa è incluso nel prezzo."]];
+function renderQA(){
+  const box=document.getElementById("qa"); box.innerHTML="";
+  for(const [k,q] of DOMANDE){
+    const d=document.createElement("div"); d.className="qa";
+    d.innerHTML=`<label for="qa-${k}">${esc(q)}</label><textarea class="box" id="qa-${k}" style="min-height:70px"></textarea>`;
+    const ta=d.querySelector("textarea"); ta.value=state.risposte[k]||""; ta.oninput=()=>{ state.risposte[k]=ta.value; save(); };
+    box.append(d);
+  }
+}
+function renderProfilo(){
+  const out=document.getElementById("profOut"), p=state.profilo;
+  if(!p){ out.innerHTML=`<p class="small">Scheda attuale: “${esc(BASE_L1_STILE)}”. È poco per abbinarti alle coppie giuste: completa l’intervista.</p>`; return; }
+  out.innerHTML=`<p style="font-family:var(--serif);font-size:24px;line-height:1.2;margin:0 0 12px">${esc(p.frase||"")}</p>
+  <dl><dt>Per chi</dt><dd>${esc(p.per_chi||"")}</dd><dt>Non per</dt><dd>${esc(p.non_per||"")}</dd><dt>Punti forti</dt><dd>${esc((p.punti_forti||[]).join(" · "))}</dd><dt>Parole per l’abbinamento</dt><dd><div class="chips">${(p.parole_stile||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div></dd></dl>
+  ${(p.da_migliorare||[]).length?`<h4>Da migliorare (rivisto dal team WR per i Partner)</h4><ul>${p.da_migliorare.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
+  <p class="ok">Attiva: l’assistente ora usa queste parole per decidere a quali coppie consigliarti.</p>`;
+}
+document.getElementById("btnProf").onclick=async()=>{
+  const out=document.getElementById("profOut"), filled=DOMANDE.filter(([k])=>(state.risposte[k]||"").trim());
+  if(filled.length<2){ out.innerHTML=`<p class="err">Rispondi almeno a due domande.</p>`; return; }
+  out.innerHTML=`<p class="status">Scrivo la scheda…</p>`;
+  const s=await getSample(); if(!s){ out.innerHTML=`<p class="err">${NO_AI}</p>`; return; }
+  try{
+    const r=await s.json(`Sei un esperto di posizionamento per aziende del matrimonio. Dalle risposte di questa location (Masseria Lumen, Valle d'Itria) crea la scheda che un assistente AI userà per abbinarla alle coppie giuste. Concreta, niente parole vuote come "qualità", "professionalità", "eccellenza", "unico".
+Risposte:\n${filled.map(([k,q])=>q+"\n"+state.risposte[k]).join("\n\n")}
+Rispondi solo con JSON: {"frase":"una frase di posizionamento nel formato: Aiutiamo [chi] a [cosa] in modo che [risultato]","per_chi":"1 frase","non_per":"1 frase","punti_forti":["3 punti concreti"],"parole_stile":["5-7 parole per l'abbinamento, es. intimo, rustico, elegante, ulivi"],"da_migliorare":["2 cose che mancano o sono vaghe nelle risposte"]}`,
+      {modelTier:"default", demo:()=>demoProfilo(filled)});
+    state.profilo=r; applyProfilo(); save(); renderProfilo();
+  }catch(e){ out.innerHTML=`<p class="err">${errMsg(e)}</p>`; }
+};
+
+/* ====== FORNITORI: MERCATO ====== */
+function renderMercato(){
+  const L=state.leads; const box=document.getElementById("mercato");
+  const ospiti=L.map(l=>num(l.brief.ospiti)).filter(Boolean), budget=L.map(l=>num(l.brief.budget)).filter(Boolean);
+  const words={}; L.forEach(l=>[...(l.tags||[]), ...String(l.brief.stile||"").split(/[,;]/)].map(w=>w.trim().toLowerCase()).filter(w=>w.length>3).forEach(w=>words[w]=(words[w]||0)+1));
+  const top=Object.entries(words).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const avg=a=>a.length?Math.round(a.reduce((x,y)=>x+y,0)/a.length):0;
+  box.innerHTML=(L.length?`<p class="small" style="margin-top:0">Dalle ${L.length} richieste di questa anteprima.</p>
+    <div class="stats"><div class="stat"><b>${avg(ospiti)||"—"}</b><span>ospiti in media</span></div><div class="stat"><b>${budget.length?eur(avg(budget)):"—"}</b><span>budget medio</span></div><div class="stat"><b>${L.length}</b><span>richieste</span></div></div>
+    <h4>Parole di stile più richieste</h4><div class="chips">${top.map(([w,n])=>`<span class="chip">${esc(w)} · ${n}</span>`).join("")||'<span class="small">Ancora nessuna</span>'}</div>`
+    :`<p class="small" style="margin-top:0">Esempio con dati inventati: in Valle d’Itria le coppie chiedono soprattutto “intimo”, “ulivi”, “cena all’aperto”; 110 ospiti in media; budget medio 38.000 €. Con le richieste reali dell’anteprima questo riquadro si aggiorna da solo.</p>`)+
+    `<h4>Domande frequenti delle coppie in zona (esempio)</h4><ul><li>Cosa succede se piove la sera della cena all’aperto?</li><li>Si può fare il rito civile nella masseria?</li><li>Ci sono camere per gli ospiti da fuori?</li></ul><p class="small">Ogni domanda è anche un contenuto per il portale GEO e per la tua scheda.</p>`;
+}
+
+/* ====== PORTALE ====== */
+(function(){
+  const fot=FORNITORI.filter(f=>f.regione==="Toscana"&&f.categoria==="fotografo").sort((a,b)=>a.da-b.da);
+  document.getElementById("pmin").textContent=eur(Math.min(...fot.map(f=>f.da)));
+  document.getElementById("pmax").textContent=eur(Math.max(...fot.map(f=>f.a)));
+  document.getElementById("ptable").innerHTML="<tr><th>Fotografo</th><th>Zona</th><th>Prezzo</th><th>Stile</th></tr>"+
+    fot.map(f=>`<tr><td>${esc(f.nome)}${f.pagato?' <span class="paidtag">Partner</span>':""}</td><td>${esc(f.zona)}</td><td>${esc(prezzo(f))}</td><td>${esc(f.stile)}</td></tr>`).join("");
+  document.getElementById("askLink").onclick=()=>{ setTimeout(()=>{ openPane("s","s-chat"); input.value="Ci sposiamo in Toscana, quali fotografi ci consigli? Siamo circa 90 persone."; input.focus(); },50); };
+})();
+
+/* ====== RESET ====== */
+document.getElementById("reset").onclick=()=>{
+  if(!confirm("Cancellare progetto, richieste e scheda di questa anteprima?")) return;
+  state=FRESH(); save(); applyProfilo(); renderBrief(); renderChat(); renderQA(); renderProfilo(); renderLeads(); renderMercato();
+  stileFiles=[]; prevFile=null; ["thumbsStile","thumbsPrev","outStile","outPrev"].forEach(id=>document.getElementById(id).innerHTML="");
+};
+
+fillIllustrations();
+document.querySelectorAll("[data-ask]").forEach(b=>b.addEventListener("click",()=>{ openPane("s","s-chat"); document.getElementById("v-sposi").scrollIntoView({block:"start"}); send(b.dataset.ask); }));
+renderBrief(); renderChat(); renderQA(); show(); detectMode();
+
+</script>
+</body>
+</html>
